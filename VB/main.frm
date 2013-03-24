@@ -1,18 +1,19 @@
 VERSION 5.00
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "MSCOMM32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form main 
    Appearance      =   0  'Flat
    Caption         =   "冷强度检测仪"
-   ClientHeight    =   9420
+   ClientHeight    =   9720
    ClientLeft      =   60
    ClientTop       =   456
-   ClientWidth     =   14268
-   ForeColor       =   &H80000002&
+   ClientWidth     =   14244
+   ForeColor       =   &H80000000&
    LinkTopic       =   "Form1"
-   ScaleHeight     =   9420
-   ScaleWidth      =   14268
+   ScaleHeight     =   9720
+   ScaleWidth      =   14244
    StartUpPosition =   1  '所有者中心
    Begin VB.Timer Timer2 
       Interval        =   10
@@ -39,7 +40,7 @@ Begin VB.Form main
    Begin TabDlg.SSTab SSTab1 
       Height          =   8412
       Left            =   120
-      TabIndex        =   16
+      TabIndex        =   15
       Top             =   1080
       Width           =   13932
       _ExtentX        =   24575
@@ -69,88 +70,158 @@ Begin VB.Form main
       TabPicture(1)   =   "main.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "Command11"
-      Tab(1).Control(1)=   "Command10"
-      Tab(1).Control(2)=   "Channel(5)"
-      Tab(1).Control(3)=   "Channel(4)"
-      Tab(1).Control(4)=   "Channel(3)"
-      Tab(1).Control(5)=   "Channel(2)"
-      Tab(1).Control(6)=   "Channel(0)"
-      Tab(1).Control(7)=   "Channel(1)"
-      Tab(1).Control(8)=   "LabelUnconnect"
-      Tab(1).Control(9)=   "Line1"
-      Tab(1).Control(10)=   "Line7"
-      Tab(1).Control(11)=   "Label4"
-      Tab(1).Control(12)=   "Label13"
-      Tab(1).Control(13)=   "Label12"
-      Tab(1).Control(14)=   "Label11"
-      Tab(1).Control(15)=   "Label10"
-      Tab(1).Control(16)=   "Label9"
-      Tab(1).Control(17)=   "Label8"
-      Tab(1).Control(18)=   "Label7"
-      Tab(1).Control(19)=   "Label6"
-      Tab(1).Control(20)=   "Label5"
-      Tab(1).Control(21)=   "Label3"
-      Tab(1).Control(22)=   "Label14"
-      Tab(1).Control(23)=   "Line2"
-      Tab(1).Control(24)=   "Line3"
-      Tab(1).Control(25)=   "Line4"
-      Tab(1).ControlCount=   26
+      Tab(1).Control(1)=   "Channel(5)"
+      Tab(1).Control(2)=   "Channel(4)"
+      Tab(1).Control(3)=   "Channel(3)"
+      Tab(1).Control(4)=   "Channel(2)"
+      Tab(1).Control(5)=   "Channel(0)"
+      Tab(1).Control(6)=   "Channel(1)"
+      Tab(1).Control(7)=   "LabelUnconnect"
+      Tab(1).Control(8)=   "Line1"
+      Tab(1).Control(9)=   "Line7"
+      Tab(1).Control(10)=   "Label4"
+      Tab(1).Control(11)=   "Label13"
+      Tab(1).Control(12)=   "Label12"
+      Tab(1).Control(13)=   "Label11"
+      Tab(1).Control(14)=   "Label10"
+      Tab(1).Control(15)=   "Label9"
+      Tab(1).Control(16)=   "Label8"
+      Tab(1).Control(17)=   "Label7"
+      Tab(1).Control(18)=   "Label6"
+      Tab(1).Control(19)=   "Label5"
+      Tab(1).Control(20)=   "Label3"
+      Tab(1).Control(21)=   "Label14"
+      Tab(1).Control(22)=   "Line2"
+      Tab(1).Control(23)=   "Line3"
+      Tab(1).Control(24)=   "Line4"
+      Tab(1).ControlCount=   25
       TabCaption(2)   =   "数据查询(F4)"
       TabPicture(2)   =   "main.frx":0038
       Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Command12"
-      Tab(2).Control(1)=   "MSFlexGrid1"
-      Tab(2).Control(2)=   "Command3"
-      Tab(2).ControlCount=   3
+      Tab(2).Control(0)=   "data_ck_txt"
+      Tab(2).Control(1)=   "time_ck_txt"
+      Tab(2).Control(2)=   "name_ck_txt"
+      Tab(2).Control(3)=   "id_ck_txt"
+      Tab(2).Control(4)=   "DB查询bt"
+      Tab(2).Control(5)=   "Adodc1"
+      Tab(2).Control(6)=   "Command12"
+      Tab(2).Control(7)=   "Command3"
+      Tab(2).Control(8)=   "DataGrid0"
+      Tab(2).Control(9)=   "Shape2"
+      Tab(2).Control(10)=   "Label36"
+      Tab(2).Control(11)=   "Label35"
+      Tab(2).Control(12)=   "Label34"
+      Tab(2).Control(13)=   "Label33"
+      Tab(2).ControlCount=   14
+      Begin VB.TextBox data_ck_txt 
+         Height          =   264
+         Left            =   -65880
+         TabIndex        =   157
+         Top             =   720
+         Width           =   1212
+      End
+      Begin VB.TextBox time_ck_txt 
+         Height          =   264
+         Left            =   -67440
+         TabIndex        =   156
+         Top             =   720
+         Width           =   1092
+      End
+      Begin VB.TextBox name_ck_txt 
+         Height          =   264
+         Left            =   -69240
+         TabIndex        =   155
+         Top             =   720
+         Width           =   1092
+      End
+      Begin VB.TextBox id_ck_txt 
+         Height          =   264
+         Left            =   -71160
+         TabIndex        =   154
+         Top             =   720
+         Width           =   1092
+      End
+      Begin VB.CommandButton DB查询bt 
+         Caption         =   "条件查询"
+         Height          =   492
+         Left            =   -64560
+         TabIndex        =   153
+         Top             =   600
+         Width           =   1212
+      End
+      Begin MSAdodcLib.Adodc Adodc1 
+         DragMode        =   1  'Automatic
+         Height          =   372
+         Left            =   -64680
+         Top             =   7440
+         Visible         =   0   'False
+         Width           =   2040
+         _ExtentX        =   3598
+         _ExtentY        =   656
+         ConnectMode     =   3
+         CursorLocation  =   3
+         IsolationLevel  =   -1
+         ConnectionTimeout=   15
+         CommandTimeout  =   30
+         CursorType      =   3
+         LockType        =   3
+         CommandType     =   8
+         CursorOptions   =   0
+         CacheSize       =   50
+         MaxRecords      =   0
+         BOFAction       =   0
+         EOFAction       =   0
+         ConnectStringType=   1
+         Appearance      =   1
+         BackColor       =   -2147483643
+         ForeColor       =   -2147483640
+         Orientation     =   0
+         Enabled         =   -1
+         Connect         =   $"main.frx":0054
+         OLEDBString     =   $"main.frx":00E2
+         OLEDBFile       =   ""
+         DataSourceName  =   ""
+         OtherAttributes =   ""
+         UserName        =   ""
+         Password        =   ""
+         RecordSource    =   "设备数据"
+         Caption         =   "Adodc1"
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "宋体"
+            Size            =   9
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         _Version        =   393216
+      End
       Begin VB.CommandButton Command12 
-         Caption         =   "显示全部"
+         Caption         =   "自动刷新：开"
          Height          =   375
          Left            =   -74640
-         TabIndex        =   145
-         Top             =   480
-         Width           =   1095
-      End
-      Begin MSFlexGridLib.MSFlexGrid MSFlexGrid1 
-         DragMode        =   1  'Automatic
-         Height          =   6855
-         Left            =   -74880
-         TabIndex        =   144
-         Top             =   960
-         Width           =   13695
-         _ExtentX        =   24151
-         _ExtentY        =   12086
-         _Version        =   393216
-         Rows            =   10
-         Cols            =   11
-         FixedCols       =   0
-         ScrollBars      =   0
-         AllowUserResizing=   3
+         TabIndex        =   143
+         Top             =   720
+         Width           =   1332
       End
       Begin VB.CommandButton Command11 
          Appearance      =   0  'Flat
          BackColor       =   &H80000009&
-         Caption         =   "开启自动保存"
+         Caption         =   "自动保存:开"
          CausesValidation=   0   'False
          Height          =   495
          Left            =   -62640
-         TabIndex        =   14
-         Top             =   360
-         Width           =   1455
-      End
-      Begin VB.CommandButton Command10 
-         Caption         =   "保存结果"
-         Height          =   495
-         Left            =   -63840
          TabIndex        =   13
          Top             =   360
-         Width           =   975
+         Width           =   1455
       End
       Begin VB.Frame Channel 
          Caption         =   "Frame5"
          Height          =   7452
          Index           =   5
          Left            =   -63800
-         TabIndex        =   84
+         TabIndex        =   83
          Top             =   840
          Visible         =   0   'False
          Width           =   1800
@@ -161,8 +232,8 @@ Begin VB.Form main
             Index           =   5
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   143
-            Text            =   "main.frx":0054
+            TabIndex        =   142
+            Text            =   "main.frx":0170
             Top             =   3480
             Width           =   1600
          End
@@ -173,8 +244,8 @@ Begin VB.Form main
             Index           =   5
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   142
-            Text            =   "main.frx":0058
+            TabIndex        =   141
+            Text            =   "main.frx":0174
             Top             =   4800
             Width           =   1600
          End
@@ -185,8 +256,8 @@ Begin VB.Form main
             Index           =   5
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   141
-            Text            =   "main.frx":005A
+            TabIndex        =   140
+            Text            =   "main.frx":0176
             Top             =   6120
             Width           =   1600
          End
@@ -204,7 +275,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   5
             Left            =   120
-            TabIndex        =   153
+            TabIndex        =   151
             Top             =   3240
             Width           =   1572
          End
@@ -222,7 +293,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   5
             Left            =   360
-            TabIndex        =   147
+            TabIndex        =   145
             Top             =   2040
             Width           =   972
          End
@@ -240,7 +311,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   5
             Left            =   240
-            TabIndex        =   126
+            TabIndex        =   125
             Top             =   2760
             Width           =   852
          End
@@ -258,7 +329,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   5
             Left            =   240
-            TabIndex        =   125
+            TabIndex        =   124
             Top             =   2400
             Width           =   1092
          End
@@ -276,7 +347,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   5
             Left            =   360
-            TabIndex        =   124
+            TabIndex        =   123
             Top             =   1680
             Width           =   492
          End
@@ -294,7 +365,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   5
             Left            =   240
-            TabIndex        =   123
+            TabIndex        =   122
             Top             =   1320
             Width           =   1092
          End
@@ -312,7 +383,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   5
             Left            =   240
-            TabIndex        =   122
+            TabIndex        =   121
             Top             =   840
             Width           =   1212
          End
@@ -330,7 +401,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   5
             Left            =   120
-            TabIndex        =   121
+            TabIndex        =   120
             Top             =   480
             Width           =   1092
          End
@@ -340,7 +411,7 @@ Begin VB.Form main
          Height          =   7452
          Index           =   4
          Left            =   -65600
-         TabIndex        =   82
+         TabIndex        =   81
          Top             =   840
          Visible         =   0   'False
          Width           =   1800
@@ -351,8 +422,8 @@ Begin VB.Form main
             Index           =   4
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   140
-            Text            =   "main.frx":005C
+            TabIndex        =   139
+            Text            =   "main.frx":0178
             Top             =   3480
             Width           =   1600
          End
@@ -363,8 +434,8 @@ Begin VB.Form main
             Index           =   4
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   139
-            Text            =   "main.frx":0060
+            TabIndex        =   138
+            Text            =   "main.frx":017C
             Top             =   4800
             Width           =   1600
          End
@@ -375,8 +446,8 @@ Begin VB.Form main
             Index           =   4
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   138
-            Text            =   "main.frx":0062
+            TabIndex        =   137
+            Text            =   "main.frx":017E
             Top             =   6120
             Width           =   1600
          End
@@ -394,7 +465,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   4
             Left            =   120
-            TabIndex        =   152
+            TabIndex        =   150
             Top             =   3240
             Width           =   1572
          End
@@ -412,7 +483,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   4
             Left            =   360
-            TabIndex        =   120
+            TabIndex        =   119
             Top             =   2640
             Width           =   852
          End
@@ -430,7 +501,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   4
             Left            =   360
-            TabIndex        =   119
+            TabIndex        =   118
             Top             =   2280
             Width           =   1092
          End
@@ -448,7 +519,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   4
             Left            =   360
-            TabIndex        =   118
+            TabIndex        =   117
             Top             =   1920
             Width           =   972
          End
@@ -466,7 +537,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   4
             Left            =   360
-            TabIndex        =   117
+            TabIndex        =   116
             Top             =   1560
             Width           =   492
          End
@@ -484,7 +555,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   4
             Left            =   240
-            TabIndex        =   116
+            TabIndex        =   115
             Top             =   1200
             Width           =   1092
          End
@@ -502,7 +573,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   4
             Left            =   480
-            TabIndex        =   115
+            TabIndex        =   114
             Top             =   840
             Width           =   1212
          End
@@ -520,7 +591,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   4
             Left            =   360
-            TabIndex        =   114
+            TabIndex        =   113
             Top             =   480
             Width           =   1092
          End
@@ -530,7 +601,7 @@ Begin VB.Form main
          Height          =   7452
          Index           =   3
          Left            =   -67400
-         TabIndex        =   81
+         TabIndex        =   80
          Top             =   840
          Visible         =   0   'False
          Width           =   1800
@@ -541,8 +612,8 @@ Begin VB.Form main
             Index           =   3
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   137
-            Text            =   "main.frx":0064
+            TabIndex        =   136
+            Text            =   "main.frx":0180
             Top             =   3480
             Width           =   1600
          End
@@ -553,8 +624,8 @@ Begin VB.Form main
             Index           =   3
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   136
-            Text            =   "main.frx":0068
+            TabIndex        =   135
+            Text            =   "main.frx":0184
             Top             =   4800
             Width           =   1600
          End
@@ -565,8 +636,8 @@ Begin VB.Form main
             Index           =   3
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   135
-            Text            =   "main.frx":006A
+            TabIndex        =   134
+            Text            =   "main.frx":0186
             Top             =   6120
             Width           =   1600
          End
@@ -584,7 +655,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   3
             Left            =   120
-            TabIndex        =   151
+            TabIndex        =   149
             Top             =   3240
             Width           =   1452
          End
@@ -602,7 +673,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   3
             Left            =   240
-            TabIndex        =   113
+            TabIndex        =   112
             Top             =   2760
             Width           =   852
          End
@@ -620,7 +691,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   3
             Left            =   240
-            TabIndex        =   112
+            TabIndex        =   111
             Top             =   2400
             Width           =   1092
          End
@@ -638,7 +709,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   3
             Left            =   360
-            TabIndex        =   111
+            TabIndex        =   110
             Top             =   1920
             Width           =   972
          End
@@ -656,7 +727,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   3
             Left            =   360
-            TabIndex        =   110
+            TabIndex        =   109
             Top             =   1560
             Width           =   492
          End
@@ -674,7 +745,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   3
             Left            =   240
-            TabIndex        =   109
+            TabIndex        =   108
             Top             =   1200
             Visible         =   0   'False
             Width           =   1092
@@ -693,7 +764,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   3
             Left            =   240
-            TabIndex        =   108
+            TabIndex        =   107
             Top             =   840
             Width           =   1332
          End
@@ -711,7 +782,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   3
             Left            =   120
-            TabIndex        =   107
+            TabIndex        =   106
             Top             =   480
             Width           =   1092
          End
@@ -721,7 +792,7 @@ Begin VB.Form main
          Height          =   7452
          Index           =   2
          Left            =   -69200
-         TabIndex        =   80
+         TabIndex        =   79
          Top             =   840
          Visible         =   0   'False
          Width           =   1800
@@ -732,8 +803,8 @@ Begin VB.Form main
             Index           =   2
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   134
-            Text            =   "main.frx":006C
+            TabIndex        =   133
+            Text            =   "main.frx":0188
             Top             =   3480
             Width           =   1600
          End
@@ -744,8 +815,8 @@ Begin VB.Form main
             Index           =   2
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   133
-            Text            =   "main.frx":0070
+            TabIndex        =   132
+            Text            =   "main.frx":018C
             Top             =   4800
             Width           =   1600
          End
@@ -756,8 +827,8 @@ Begin VB.Form main
             Index           =   2
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   132
-            Text            =   "main.frx":0072
+            TabIndex        =   131
+            Text            =   "main.frx":018E
             Top             =   6120
             Width           =   1600
          End
@@ -775,7 +846,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   2
             Left            =   120
-            TabIndex        =   150
+            TabIndex        =   148
             Top             =   3240
             Width           =   1572
          End
@@ -793,7 +864,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   2
             Left            =   240
-            TabIndex        =   106
+            TabIndex        =   105
             Top             =   2760
             Width           =   852
          End
@@ -811,7 +882,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   2
             Left            =   240
-            TabIndex        =   105
+            TabIndex        =   104
             Top             =   2400
             Width           =   1092
          End
@@ -829,7 +900,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   2
             Left            =   240
-            TabIndex        =   104
+            TabIndex        =   103
             Top             =   1920
             Width           =   972
          End
@@ -847,7 +918,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   2
             Left            =   240
-            TabIndex        =   103
+            TabIndex        =   102
             Top             =   1560
             Width           =   492
          End
@@ -865,7 +936,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   2
             Left            =   240
-            TabIndex        =   102
+            TabIndex        =   101
             Top             =   1200
             Width           =   1092
          End
@@ -883,7 +954,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   2
             Left            =   240
-            TabIndex        =   101
+            TabIndex        =   100
             Top             =   840
             Width           =   1452
          End
@@ -901,7 +972,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   2
             Left            =   240
-            TabIndex        =   100
+            TabIndex        =   99
             Top             =   480
             Width           =   1092
          End
@@ -910,14 +981,14 @@ Begin VB.Form main
          Caption         =   "串口监视："
          Height          =   6135
          Left            =   8280
-         TabIndex        =   70
+         TabIndex        =   69
          Top             =   720
          Width           =   5295
          Begin VB.CommandButton Command7 
             Caption         =   "清空显示"
             Height          =   372
             Left            =   4200
-            TabIndex        =   83
+            TabIndex        =   82
             Top             =   5760
             Width           =   1095
          End
@@ -925,7 +996,7 @@ Begin VB.Form main
             Height          =   5628
             Left            =   0
             OLEDragMode     =   1  'Automatic
-            TabIndex        =   71
+            TabIndex        =   70
             Top             =   0
             Width           =   5655
          End
@@ -944,7 +1015,7 @@ Begin VB.Form main
             ForeColor       =   &H0000FF00&
             Height          =   372
             Left            =   2040
-            TabIndex        =   73
+            TabIndex        =   72
             Top             =   5760
             Width           =   2172
          End
@@ -963,7 +1034,7 @@ Begin VB.Form main
             ForeColor       =   &H0000FF00&
             Height          =   372
             Left            =   0
-            TabIndex        =   72
+            TabIndex        =   71
             Top             =   5760
             Width           =   2052
          End
@@ -972,7 +1043,7 @@ Begin VB.Form main
          Caption         =   "数据采集设定"
          Height          =   6135
          Left            =   2520
-         TabIndex        =   54
+         TabIndex        =   53
          Top             =   600
          Width           =   5535
          Begin VB.TextBox TextCY 
@@ -987,7 +1058,7 @@ Begin VB.Form main
             EndProperty
             Height          =   390
             Left            =   600
-            TabIndex        =   77
+            TabIndex        =   76
             Text            =   "5"
             Top             =   5520
             Width           =   525
@@ -1012,7 +1083,7 @@ Begin VB.Form main
             Height          =   300
             Left            =   1440
             Style           =   2  'Dropdown List
-            TabIndex        =   76
+            TabIndex        =   75
             Top             =   3000
             Width           =   1215
          End
@@ -1045,7 +1116,7 @@ Begin VB.Form main
             EndProperty
             Height          =   495
             Left            =   3480
-            TabIndex        =   68
+            TabIndex        =   67
             Text            =   "00"
             Top             =   2280
             Width           =   495
@@ -1062,7 +1133,7 @@ Begin VB.Form main
             EndProperty
             Height          =   495
             Left            =   2640
-            TabIndex        =   66
+            TabIndex        =   65
             Text            =   "05"
             Top             =   2280
             Width           =   495
@@ -1079,7 +1150,7 @@ Begin VB.Form main
             EndProperty
             Height          =   495
             Left            =   2040
-            TabIndex        =   64
+            TabIndex        =   63
             Text            =   "00"
             Top             =   2280
             Width           =   375
@@ -1096,7 +1167,7 @@ Begin VB.Form main
             EndProperty
             Height          =   495
             Left            =   3960
-            TabIndex        =   62
+            TabIndex        =   61
             Text            =   "15"
             Top             =   1560
             Width           =   495
@@ -1113,7 +1184,7 @@ Begin VB.Form main
             EndProperty
             Height          =   495
             Left            =   3120
-            TabIndex        =   60
+            TabIndex        =   59
             Text            =   "09"
             Top             =   1560
             Width           =   495
@@ -1130,7 +1201,7 @@ Begin VB.Form main
             EndProperty
             Height          =   495
             Left            =   2040
-            TabIndex        =   58
+            TabIndex        =   57
             Text            =   "2012"
             Top             =   1560
             Width           =   735
@@ -1164,7 +1235,7 @@ Begin VB.Form main
             EndProperty
             Height          =   375
             Left            =   240
-            TabIndex        =   75
+            TabIndex        =   74
             Top             =   3000
             Width           =   1215
          End
@@ -1172,7 +1243,7 @@ Begin VB.Form main
             Caption         =   "快捷命令："
             Height          =   255
             Left            =   120
-            TabIndex        =   74
+            TabIndex        =   73
             Top             =   4920
             Width           =   1455
          End
@@ -1196,7 +1267,7 @@ Begin VB.Form main
             EndProperty
             Height          =   255
             Left            =   4080
-            TabIndex        =   69
+            TabIndex        =   68
             Top             =   2400
             Width           =   255
          End
@@ -1213,7 +1284,7 @@ Begin VB.Form main
             EndProperty
             Height          =   255
             Left            =   3240
-            TabIndex        =   67
+            TabIndex        =   66
             Top             =   2400
             Width           =   255
          End
@@ -1230,7 +1301,7 @@ Begin VB.Form main
             EndProperty
             Height          =   255
             Left            =   2400
-            TabIndex        =   65
+            TabIndex        =   64
             Top             =   2400
             Width           =   255
          End
@@ -1247,7 +1318,7 @@ Begin VB.Form main
             EndProperty
             Height          =   255
             Left            =   4560
-            TabIndex        =   63
+            TabIndex        =   62
             Top             =   1680
             Width           =   255
          End
@@ -1264,7 +1335,7 @@ Begin VB.Form main
             EndProperty
             Height          =   255
             Left            =   3720
-            TabIndex        =   61
+            TabIndex        =   60
             Top             =   1680
             Width           =   255
          End
@@ -1281,7 +1352,7 @@ Begin VB.Form main
             EndProperty
             Height          =   255
             Left            =   2880
-            TabIndex        =   59
+            TabIndex        =   58
             Top             =   1680
             Width           =   255
          End
@@ -1298,7 +1369,7 @@ Begin VB.Form main
             EndProperty
             Height          =   375
             Left            =   240
-            TabIndex        =   57
+            TabIndex        =   56
             Top             =   1320
             Width           =   1215
          End
@@ -1315,7 +1386,7 @@ Begin VB.Form main
             EndProperty
             Height          =   375
             Left            =   240
-            TabIndex        =   56
+            TabIndex        =   55
             Top             =   840
             Width           =   1215
          End
@@ -1332,7 +1403,7 @@ Begin VB.Form main
             EndProperty
             Height          =   375
             Left            =   240
-            TabIndex        =   55
+            TabIndex        =   54
             Top             =   360
             Width           =   1215
          End
@@ -1341,14 +1412,14 @@ Begin VB.Form main
          Caption         =   "串口设置"
          Height          =   4455
          Left            =   120
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   600
          Width           =   2055
          Begin VB.ComboBox Combo5 
             Height          =   300
             Left            =   720
             Style           =   2  'Dropdown List
-            TabIndex        =   15
+            TabIndex        =   14
             Top             =   1680
             Width           =   1215
          End
@@ -1423,7 +1494,7 @@ Begin VB.Form main
             Caption         =   "校验位"
             Height          =   375
             Left            =   120
-            TabIndex        =   34
+            TabIndex        =   33
             Top             =   1720
             Width           =   615
          End
@@ -1431,7 +1502,7 @@ Begin VB.Form main
             Caption         =   "停止位"
             Height          =   255
             Left            =   120
-            TabIndex        =   33
+            TabIndex        =   32
             Top             =   1380
             Width           =   615
          End
@@ -1439,7 +1510,7 @@ Begin VB.Form main
             Caption         =   "数据位"
             Height          =   255
             Left            =   120
-            TabIndex        =   32
+            TabIndex        =   31
             Top             =   1020
             Width           =   615
          End
@@ -1447,7 +1518,7 @@ Begin VB.Form main
             Caption         =   "波特率"
             Height          =   255
             Left            =   120
-            TabIndex        =   31
+            TabIndex        =   30
             Top             =   660
             Width           =   615
          End
@@ -1455,7 +1526,7 @@ Begin VB.Form main
             Caption         =   "端口号"
             Height          =   255
             Left            =   120
-            TabIndex        =   30
+            TabIndex        =   29
             Top             =   330
             Width           =   735
          End
@@ -1473,7 +1544,7 @@ Begin VB.Form main
             EndProperty
             Height          =   375
             Left            =   840
-            TabIndex        =   29
+            TabIndex        =   28
             Top             =   3240
             Width           =   1095
          End
@@ -1491,7 +1562,7 @@ Begin VB.Form main
             EndProperty
             Height          =   375
             Left            =   840
-            TabIndex        =   28
+            TabIndex        =   27
             Top             =   2760
             Width           =   1095
          End
@@ -1499,7 +1570,7 @@ Begin VB.Form main
             Caption         =   "接收"
             Height          =   375
             Left            =   240
-            TabIndex        =   27
+            TabIndex        =   26
             Top             =   3360
             Width           =   375
          End
@@ -1507,7 +1578,7 @@ Begin VB.Form main
             Caption         =   "发送"
             Height          =   255
             Left            =   240
-            TabIndex        =   26
+            TabIndex        =   25
             Top             =   2880
             Width           =   375
          End
@@ -1516,7 +1587,7 @@ Begin VB.Form main
          Caption         =   "手动添加数据"
          Height          =   615
          Left            =   -62760
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   9480
          Width           =   1335
       End
@@ -1524,7 +1595,7 @@ Begin VB.Form main
          Caption         =   "从机状态"
          Height          =   2415
          Left            =   120
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   5160
          Width           =   2055
          Begin VB.CommandButton Command5 
@@ -1551,7 +1622,7 @@ Begin VB.Form main
             Height          =   255
             Index           =   5
             Left            =   240
-            TabIndex        =   53
+            TabIndex        =   52
             Top             =   1440
             Width           =   1455
          End
@@ -1562,7 +1633,7 @@ Begin VB.Form main
             Height          =   255
             Index           =   4
             Left            =   240
-            TabIndex        =   52
+            TabIndex        =   51
             Top             =   1200
             Width           =   1455
          End
@@ -1573,7 +1644,7 @@ Begin VB.Form main
             Height          =   255
             Index           =   3
             Left            =   240
-            TabIndex        =   51
+            TabIndex        =   50
             Top             =   960
             Width           =   1455
          End
@@ -1584,7 +1655,7 @@ Begin VB.Form main
             Height          =   255
             Index           =   2
             Left            =   240
-            TabIndex        =   50
+            TabIndex        =   49
             Top             =   720
             Width           =   1455
          End
@@ -1595,32 +1666,32 @@ Begin VB.Form main
             Height          =   255
             Index           =   1
             Left            =   240
-            TabIndex        =   49
+            TabIndex        =   48
             Top             =   480
             Width           =   1455
          End
          Begin VB.Label Label22 
             Caption         =   "DEV0"
             Enabled         =   0   'False
-            ForeColor       =   &H8000000A&
+            ForeColor       =   &H0000FF00&
             Height          =   255
             Index           =   0
             Left            =   240
-            TabIndex        =   48
+            TabIndex        =   47
             Top             =   240
             Width           =   1455
          End
          Begin VB.Label Label23 
             Height          =   495
             Left            =   5880
-            TabIndex        =   23
+            TabIndex        =   22
             Top             =   600
             Width           =   1335
          End
          Begin VB.Label Label25 
             Height          =   495
             Left            =   11160
-            TabIndex        =   22
+            TabIndex        =   21
             Top             =   600
             Width           =   1335
          End
@@ -1629,14 +1700,14 @@ Begin VB.Form main
          Caption         =   "发送(&s)"
          Height          =   372
          Left            =   12480
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   7200
          Width           =   1095
       End
       Begin VB.TextBox TextSend 
          Height          =   372
          Left            =   3720
-         TabIndex        =   19
+         TabIndex        =   18
          Top             =   7200
          Width           =   8655
       End
@@ -1645,7 +1716,7 @@ Begin VB.Form main
          Height          =   7452
          Index           =   0
          Left            =   -72800
-         TabIndex        =   78
+         TabIndex        =   77
          Top             =   840
          Width           =   1800
          Begin VB.TextBox TextFMid 
@@ -1655,8 +1726,8 @@ Begin VB.Form main
             Index           =   0
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   146
-            Text            =   "main.frx":0074
+            TabIndex        =   144
+            Text            =   "main.frx":0190
             Top             =   4800
             Width           =   1600
          End
@@ -1667,7 +1738,7 @@ Begin VB.Form main
             Index           =   0
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   128
+            TabIndex        =   127
             Top             =   6120
             Width           =   1600
          End
@@ -1678,8 +1749,8 @@ Begin VB.Form main
             Index           =   0
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   127
-            Text            =   "main.frx":0076
+            TabIndex        =   126
+            Text            =   "main.frx":0192
             Top             =   3480
             Width           =   1600
          End
@@ -1697,7 +1768,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   0
             Left            =   120
-            TabIndex        =   148
+            TabIndex        =   146
             Top             =   3240
             Width           =   1572
          End
@@ -1715,7 +1786,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   0
             Left            =   240
-            TabIndex        =   92
+            TabIndex        =   91
             Top             =   2760
             Width           =   1332
          End
@@ -1733,7 +1804,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   0
             Left            =   240
-            TabIndex        =   91
+            TabIndex        =   90
             Top             =   2400
             Width           =   1332
          End
@@ -1751,7 +1822,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   0
             Left            =   240
-            TabIndex        =   90
+            TabIndex        =   89
             Top             =   2040
             Width           =   1332
          End
@@ -1769,7 +1840,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   0
             Left            =   240
-            TabIndex        =   89
+            TabIndex        =   88
             Top             =   1680
             Width           =   1332
          End
@@ -1787,7 +1858,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   0
             Left            =   240
-            TabIndex        =   88
+            TabIndex        =   87
             Top             =   1320
             Width           =   1092
          End
@@ -1805,7 +1876,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   0
             Left            =   240
-            TabIndex        =   87
+            TabIndex        =   86
             Top             =   840
             Width           =   1332
          End
@@ -1823,7 +1894,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   0
             Left            =   240
-            TabIndex        =   86
+            TabIndex        =   85
             Top             =   480
             Width           =   1092
          End
@@ -1834,7 +1905,7 @@ Begin VB.Form main
          Height          =   7452
          Index           =   1
          Left            =   -71000
-         TabIndex        =   79
+         TabIndex        =   78
          Top             =   840
          Visible         =   0   'False
          Width           =   1800
@@ -1845,8 +1916,8 @@ Begin VB.Form main
             Index           =   1
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   131
-            Text            =   "main.frx":007A
+            TabIndex        =   130
+            Text            =   "main.frx":0196
             Top             =   3480
             Width           =   1600
          End
@@ -1857,8 +1928,8 @@ Begin VB.Form main
             Index           =   1
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   130
-            Text            =   "main.frx":007E
+            TabIndex        =   129
+            Text            =   "main.frx":019A
             Top             =   4800
             Width           =   1600
          End
@@ -1869,8 +1940,8 @@ Begin VB.Form main
             Index           =   1
             Left            =   120
             MultiLine       =   -1  'True
-            TabIndex        =   129
-            Text            =   "main.frx":0080
+            TabIndex        =   128
+            Text            =   "main.frx":019C
             Top             =   6120
             Width           =   1600
          End
@@ -1888,7 +1959,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   1
             Left            =   120
-            TabIndex        =   149
+            TabIndex        =   147
             Top             =   3240
             Width           =   1572
          End
@@ -1906,7 +1977,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   1
             Left            =   240
-            TabIndex        =   99
+            TabIndex        =   98
             Top             =   2760
             Width           =   1332
          End
@@ -1924,7 +1995,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   1
             Left            =   240
-            TabIndex        =   98
+            TabIndex        =   97
             Top             =   2400
             Width           =   1452
          End
@@ -1942,7 +2013,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   1
             Left            =   240
-            TabIndex        =   97
+            TabIndex        =   96
             Top             =   2040
             Width           =   1332
          End
@@ -1960,7 +2031,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   1
             Left            =   240
-            TabIndex        =   96
+            TabIndex        =   95
             Top             =   1680
             Width           =   1452
          End
@@ -1978,7 +2049,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   1
             Left            =   240
-            TabIndex        =   95
+            TabIndex        =   94
             Top             =   1200
             Width           =   1092
          End
@@ -1996,7 +2067,7 @@ Begin VB.Form main
             Height          =   252
             Index           =   1
             Left            =   240
-            TabIndex        =   94
+            TabIndex        =   93
             Top             =   840
             Width           =   1452
          End
@@ -2014,10 +2085,312 @@ Begin VB.Form main
             Height          =   252
             Index           =   1
             Left            =   120
-            TabIndex        =   93
+            TabIndex        =   92
             Top             =   480
             Width           =   1092
          End
+      End
+      Begin MSDataGridLib.DataGrid DataGrid0 
+         Bindings        =   "main.frx":019E
+         Height          =   6972
+         Left            =   -74760
+         TabIndex        =   152
+         Top             =   1200
+         Width           =   13452
+         _ExtentX        =   23728
+         _ExtentY        =   12298
+         _Version        =   393216
+         HeadLines       =   1
+         RowHeight       =   15
+         FormatLocked    =   -1  'True
+         BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "宋体"
+            Size            =   9
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "宋体"
+            Size            =   9
+            Charset         =   134
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ColumnCount     =   14
+         BeginProperty Column00 
+            DataField       =   "编号"
+            Caption         =   "编号"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column01 
+            DataField       =   "设备ID"
+            Caption         =   "设备ID"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column02 
+            DataField       =   "设备名称"
+            Caption         =   "设备名称"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column03 
+            DataField       =   "日期"
+            Caption         =   "日期"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column04 
+            DataField       =   "时间"
+            Caption         =   "时间"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column05 
+            DataField       =   "温度"
+            Caption         =   "温度"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column06 
+            DataField       =   "风速"
+            Caption         =   "风速"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column07 
+            DataField       =   "风冷指数"
+            Caption         =   "风冷指数"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column08 
+            DataField       =   "等价制冷温度"
+            Caption         =   "等价制冷温度"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column09 
+            DataField       =   "相当温度"
+            Caption         =   "相当温度"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column10 
+            DataField       =   "冻伤危害性"
+            Caption         =   "冻伤危害性"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column11 
+            DataField       =   "高强度作业"
+            Caption         =   "高强度作业"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column12 
+            DataField       =   "中等强度作业"
+            Caption         =   "中等强度作业"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         BeginProperty Column13 
+            DataField       =   "安静作业"
+            Caption         =   "安静作业"
+            BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+               Type            =   0
+               Format          =   ""
+               HaveTrueFalseNull=   0
+               FirstDayOfWeek  =   0
+               FirstWeekOfYear =   0
+               LCID            =   2052
+               SubFormatType   =   0
+            EndProperty
+         EndProperty
+         SplitCount      =   1
+         BeginProperty Split0 
+            RecordSelectors =   0   'False
+            BeginProperty Column00 
+               ColumnWidth     =   552.189
+            EndProperty
+            BeginProperty Column01 
+               ColumnWidth     =   708.095
+            EndProperty
+            BeginProperty Column02 
+               ColumnWidth     =   887.811
+            EndProperty
+            BeginProperty Column03 
+               ColumnWidth     =   887.811
+            EndProperty
+            BeginProperty Column04 
+               ColumnWidth     =   840.189
+            EndProperty
+            BeginProperty Column05 
+               ColumnWidth     =   684.284
+            EndProperty
+            BeginProperty Column06 
+               ColumnWidth     =   684.284
+            EndProperty
+            BeginProperty Column07 
+               ColumnWidth     =   815.811
+            EndProperty
+            BeginProperty Column08 
+               ColumnWidth     =   1152
+            EndProperty
+            BeginProperty Column09 
+               ColumnWidth     =   768.189
+            EndProperty
+            BeginProperty Column10 
+               ColumnWidth     =   996.095
+            EndProperty
+            BeginProperty Column11 
+               ColumnWidth     =   1008
+            EndProperty
+            BeginProperty Column12 
+            EndProperty
+            BeginProperty Column13 
+               ColumnWidth     =   924.095
+            EndProperty
+         EndProperty
+      End
+      Begin VB.Shape Shape2 
+         BackColor       =   &H000000FF&
+         BorderColor     =   &H00FFFFFF&
+         FillStyle       =   0  'Solid
+         Height          =   372
+         Left            =   -73320
+         Shape           =   3  'Circle
+         Top             =   720
+         Width           =   372
+      End
+      Begin VB.Label Label36 
+         Caption         =   "设备名称="
+         Height          =   252
+         Left            =   -70080
+         TabIndex        =   161
+         Top             =   720
+         Width           =   852
+      End
+      Begin VB.Label Label35 
+         Caption         =   "时间="
+         Height          =   252
+         Left            =   -68040
+         TabIndex        =   160
+         Top             =   720
+         Width           =   612
+      End
+      Begin VB.Label Label34 
+         Caption         =   "日期="
+         Height          =   252
+         Left            =   -66360
+         TabIndex        =   159
+         Top             =   720
+         Width           =   612
+      End
+      Begin VB.Label Label33 
+         Caption         =   "ID="
+         Height          =   252
+         Left            =   -71640
+         TabIndex        =   158
+         Top             =   720
+         Width           =   372
       End
       Begin VB.Label LabelUnconnect 
          Caption         =   "检测仪全部断开连接，请重连。"
@@ -2032,7 +2405,7 @@ Begin VB.Form main
          EndProperty
          Height          =   1575
          Left            =   -71040
-         TabIndex        =   85
+         TabIndex        =   84
          Top             =   3600
          Visible         =   0   'False
          Width           =   9375
@@ -2063,7 +2436,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74760
-         TabIndex        =   47
+         TabIndex        =   46
          Top             =   1680
          Width           =   1692
       End
@@ -2080,7 +2453,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74760
-         TabIndex        =   46
+         TabIndex        =   45
          Top             =   7080
          Width           =   1692
       End
@@ -2097,7 +2470,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74880
-         TabIndex        =   45
+         TabIndex        =   44
          Top             =   5640
          Width           =   2055
       End
@@ -2114,7 +2487,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74760
-         TabIndex        =   44
+         TabIndex        =   43
          Top             =   4440
          Width           =   1692
       End
@@ -2131,7 +2504,7 @@ Begin VB.Form main
          EndProperty
          Height          =   372
          Left            =   -74760
-         TabIndex        =   43
+         TabIndex        =   42
          Top             =   4080
          Width           =   1932
       End
@@ -2148,7 +2521,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74760
-         TabIndex        =   42
+         TabIndex        =   41
          Top             =   3600
          Width           =   1692
       End
@@ -2165,7 +2538,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74760
-         TabIndex        =   41
+         TabIndex        =   40
          Top             =   3240
          Width           =   2292
       End
@@ -2182,7 +2555,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74760
-         TabIndex        =   40
+         TabIndex        =   39
          Top             =   2880
          Width           =   1692
       End
@@ -2199,7 +2572,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74760
-         TabIndex        =   39
+         TabIndex        =   38
          Top             =   2520
          Width           =   1692
       End
@@ -2216,7 +2589,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74760
-         TabIndex        =   38
+         TabIndex        =   37
          Top             =   2160
          Width           =   1692
       End
@@ -2233,7 +2606,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74880
-         TabIndex        =   37
+         TabIndex        =   36
          Top             =   840
          Width           =   2172
       End
@@ -2250,7 +2623,7 @@ Begin VB.Form main
          EndProperty
          Height          =   300
          Left            =   -74760
-         TabIndex        =   36
+         TabIndex        =   35
          Top             =   1320
          Width           =   1692
       End
@@ -2288,7 +2661,7 @@ Begin VB.Form main
          EndProperty
          Height          =   375
          Left            =   2400
-         TabIndex        =   35
+         TabIndex        =   34
          Top             =   7200
          Width           =   1455
       End
@@ -2311,7 +2684,7 @@ Begin VB.Form main
       EndProperty
       Height          =   372
       Left            =   9240
-      TabIndex        =   18
+      TabIndex        =   17
       Top             =   720
       Width           =   4452
    End
@@ -2328,7 +2701,7 @@ Begin VB.Form main
       EndProperty
       Height          =   372
       Left            =   7800
-      TabIndex        =   17
+      TabIndex        =   16
       Top             =   720
       Width           =   1692
    End
@@ -2362,6 +2735,38 @@ Const FRAME_MAX_LEN = 80   '最大帧长
 Const FRAME_MIN_LEN = 5   '最小帧长
 Const FRAME_HEAD = &HFA   '帧头
 Const FRAME_END = &HFB    '帧尾
+'ComCMD
+Const Z_CMD0 = &HD0
+'命令0 响应查找从机命令
+Const Z_CMD1_DATE = &HD1
+'命令1 发送 采样日期  Result.Date
+Const Z_CMD2_TIME = &HD2
+'命令2 发送 采样时间  Result.Time
+Const Z_CMD3_TEMPERATURE = &HD3
+'命令3 发送 温度
+Const Z_CMD4_WS = &HD4
+'命令4 发送风速
+Const Z_CMD5_WCI = &HD5
+'命令5 发送WCI
+Const Z_CMD6_ETC = &HD6
+'命令6 发送ETC
+Const Z_CMD7_TEQ = &HD7
+'命令7 发送TEQ
+Const Z_CMD8_OTHER = &HD8
+'命令8 发送冻伤危害性和轻、重、中四个字节的数据
+Const Z_CMD9_SINGLE = &HD9
+'命令09 单次检测
+Const Z_CMD10_CYCLE = &HDA
+'命令10 循环检测
+Const Z_CMD11_STOP = &HDB
+'命令11 中止检测
+Const Z_CMD12_SYNC = &HDC
+'命令12 同步时钟
+Const Z_CMD13_GET_DATA = &HDD
+'命令13 请求数据
+Const Z_CMD14_SET_STORAGE = &HDE
+'命令14 设置存储位置
+
 
 'id
 Const DEV1ID = &HB1
@@ -2380,42 +2785,12 @@ Const RecRetry = 4  '重试
 Const RecFind = 5  '查找
 
 
-'************数据库定义************
-Dim Conn As New ADODB.Connection
-Dim rs As New ADODB.Recordset
-
-
-'************设备信息相关结构体************
-Private Type DEVICEDRIVER
-id As Integer
-name As String
-Date As String
-Time As String
-Temperature As Single
-WindSpeed As Single
-WCI As Single
-ECT As Single
-TEQ As Single
-WeiHai As Byte
-LowLabor As Byte
-MidLabor As Byte
-HighLabor As Byte
-End Type
-
-Private Type DeviceState
-DR(6) As DEVICEDRIVER '设备信息
-DeviceCount As Integer '设备个数
-
-End Type
-'定义设备信息结构体
-Dim DS1 As DeviceState
 'ReDim DS1.DR(DS1.DeviceCount) '重定义设备个数，不保留之前的数据
 'ReDim Preserve DS1.DR(DS1.DeviceCount) '重定义设备个数，保留之前的数据
 
 
 '************实时数据保存开关************
 Dim SaveToDb As Boolean
-Dim AlwaysSaveToDb As Boolean
 Dim RecData(40) As Byte
 Dim SndData(12) As Byte
 Dim SndCount As Integer
@@ -2429,45 +2804,12 @@ Const MainWait = 1
 Const MainDeal = 2
 '定义一个缓冲池 用于存储串口数据
 Dim RecBuf As Collection
+
+
+
  
-Public Function adodbjet(Optional DBfile As String, Optional pwd As String) As ADODB.Connection
-On Error Resume Next
-Dim defDB As String
-defDB = App.Path & "\db.mdb"
-If DBfile = "" Then DBfile = defDB
-Set adodbjet = New ADODB.Connection
-adodbjet.Open "Provider=Microsoft.Jet.OLEDB4.0;" & "Persist Security Info=False;User ID=Admin;" & _
-"Jet OLEDB:Database Password=" & pwd & ";"
-'Data Source = " & DBfile"
-If adodbjet.State <> 1 Then Set adodbjet = Nothing
-End Function
- 
- 
-'Sub data()
-'On Error GoTo err
-'Dbpath = App.Path & "\db.mdb"
-'Constr = "Provider=Microsoft.Jet.OLEDB.4.0;Persist Security Info=False;Data Source=" & Dbpath
-'Conn.Open Constr
-'err:
-'If err.Number Then
-'MsgBox "数据库出错"
-'End
-'End If
-'End Sub
 
 
-Private Sub Command12_Click()
-'Row = "天安门" & vbTab & "故宫" & vbTab & iijj & vbTab & "abc"
-'iijj = iijj + 1
-
-MSFlexGrid1.AddItem Row
-'MSFlexGrid1.AddItem Row, 2
-
-End Sub
-
-Private Sub DataGrid1_Click()
-
-End Sub
 
 '*******************************界面初始化************************************
 '
@@ -2520,12 +2862,13 @@ Combo5.ListIndex = 2
 Combo6.List(0) = "全部从机"
 Combo6.ListIndex = 0
 '命令
-Combo7.List(0) = "连接从机"
-Combo7.List(1) = "单次检测"
-Combo7.List(2) = "循环检测"
-Combo7.List(3) = "查询数据"
-Combo7.List(4) = "同步时钟"
-Combo7.List(5) = "终止检测"
+Combo7.List(0) = "单次检测"
+Combo7.List(1) = "循环检测"
+Combo7.List(2) = "终止检测"
+Combo7.List(3) = "同步时钟"
+Combo7.List(4) = "查询数据"
+
+
 Combo7.ListIndex = 1
 '数据存储方式选择
 Combo8.List(0) = "计算机+检测仪"
@@ -2536,10 +2879,8 @@ Combo8.ListIndex = 1
 '按Command2键的快捷键设定
 Command2.Caption = "打开串口(&O)"
 '设置所有设备状态为关闭
-DeviceCount = 0
+DS1.DeviceCount = 0
 
-'设置从机初始名字和颜色状态
-Call DevStateRefresh
 '初始化选项卡
 SSTab1.Tab = 0
 'list 初始化
@@ -2548,11 +2889,56 @@ List1.Clear    '清除list内容
  Set RecBuf = New Collection
 '初始化接收状态机状态到IDLE
 RecState = RecIdle
-'数据保存开关初始化
-SaveToDb = False
-AlwaysSaveToDb = False
 '数据库加载
+usedatabase = True '开启数据库
+Call databaseInit
+'tab2 连接数据库      Dim sql As String
+Set DataGrid0.DataSource = Adodc1
+'数据库显示自动刷新
+db_auto_refresh = True
+Shape2.FillColor = &HFF000
 
+End Sub
+
+
+Private Sub Command12_Click()   'tab2显示全部按下
+    Adodc1.RecordSource = "select * from 设备数据 where 设备名称 =" + "'" + "noname" + "'"
+    Adodc1.Refresh
+    Adodc1.Recordset.MoveLast
+    If db_auto_refresh = True Then
+         db_auto_refresh = False
+         Command12.Caption = "自动刷新：关"
+         Shape2.FillColor = &H0
+    Else
+        Shape2.FillColor = &HFF000
+        Command12.Caption = "自动刷新：开"
+        db_auto_refresh = True
+    End If
+    
+End Sub
+
+Private Sub DB查询bt_Click()
+    Dim wherestr As String
+    wherestr = ""
+    If id_ck_txt.Text <> "" Then
+        wherestr = " and 设备ID=" & id_ck_txt.Text
+    End If
+    If name_ck_txt.Text <> "" Then
+         wherestr = " and 设备名称='" & name_ck_txt.Text & "'" & wherestr
+    End If
+    If time_ck_txt.Text <> "" Then
+         wherestr = " and 时间=#" & time_ck_txt.Text & "#" & wherestr
+    End If
+    If data_ck_txt.Text <> "" Then
+         wherestr = " and 日期=#" & data_ck_txt.Text & "#" & wherestr
+    End If
+    List1.AddItem (wherestr)
+    wherestr = " where 1=1" & wherestr
+    Adodc1.RecordSource = "select * from 设备数据" & wherestr
+    Adodc1.Refresh
+    
+     '(a = 1 or a is null) and (b = 2 or b is null) and (c = 3 or c is null)
+    
 End Sub
 
 
@@ -2614,25 +3000,21 @@ Private Sub Combo7_Click()
         TextMIN.Enabled = False
         TextSEC.Enabled = False
         Combo8.Enabled = False
+
     If Combo7.ListIndex = 0 Then
-    List1.AddItem ("[连接从机]")
+        List1.AddItem ("[单次检测]")
+        Combo8.Enabled = True
 
     ElseIf Combo7.ListIndex = 1 Then
-    List1.AddItem ("[单次检测]")
-    Combo8.Enabled = True
-    ElseIf Combo7.ListIndex = 2 Then
-    List1.AddItem ("[循环检测]")
+        List1.AddItem ("[循环检测]")
         TextHOUR.Enabled = True
         TextMIN.Enabled = True
         TextSEC.Enabled = True
         Combo8.Enabled = True
+    ElseIf Combo7.ListIndex = 2 Then
+        List1.AddItem ("[终止检测]")
     ElseIf Combo7.ListIndex = 3 Then
-    List1.AddItem ("[查询数据]")
-        TextYY.Enabled = True
-        TextMM.Enabled = True
-        TextDD.Enabled = True
-    ElseIf Combo7.ListIndex = 4 Then
-    List1.AddItem ("[同步时钟]")
+        List1.AddItem ("[同步时钟]")
         TextYY.Text = Year(Now)
         TextMM.Text = Month(Now)
         TextDD.Text = Day(Now)
@@ -2646,9 +3028,15 @@ Private Sub Combo7_Click()
         TextHOUR.Enabled = True
         TextMIN.Enabled = True
         TextSEC.Enabled = True
+
+    ElseIf Combo7.ListIndex = 4 Then
+        List1.AddItem ("[查询数据]")
+        TextYY.Enabled = True
+        TextMM.Enabled = True
+        TextDD.Enabled = True
         
     ElseIf Combo7.ListIndex = 5 Then
-        List1.AddItem ("[终止检测]")
+        
     End If
 End Sub
 
@@ -2656,9 +3044,7 @@ End Sub
 '“同步时钟”快捷键
 Private Sub Command1_Click()
  Combo6.ListIndex = 0
- Combo7.ListIndex = 1
- Combo6.ListIndex = 0
- Combo7.ListIndex = 4
+ Combo7.ListIndex = 3
  Call Command8_Click
 End Sub
 
@@ -2687,6 +3073,7 @@ End Sub
 
 '
 '[查找从机]按钮
+'功能：删掉所有现有从机，发送搜索从机命令
 Private Sub Command5_Click()
 If MSComm1.PortOpen = False Then   '判断串口有没有开启
         If MsgBox("串口未开启，是否开启？", vbYesNo) = vbYes Then
@@ -2718,13 +3105,13 @@ Else
             Combo6.AddItem ("全部从机")
             '设置显示默认选项
             Combo6.ListIndex = 0
-            Call Tab1Refresh  '刷新tab2显示
-            SndCount = 0
+            Call Tab1Refresh  '重绘实时显示界面
+            SndCount = 0      '充值发送计数
 
 End If
 End Sub
 
-'
+
 '清空收发计数器
 Private Sub Command6_Click()
 '如果清空按下 清空串口收发计数
@@ -2763,7 +3150,7 @@ Private Sub Command8_Click()
         ElseIf Combo6.ListCount >= 2 Then
         
         End If
-        StorageMode = Combo8.ListIndex
+        StorageMode = Combo8.ListIndex '0=both 1=computer 2=device 3=stop
         '帧头
         SndData(0) = &HFA
         '帧尾
@@ -2772,31 +3159,30 @@ Private Sub Command8_Click()
         SndData(1) = &HD
         '
         '操作选择
-        SndData(3) = &HD0 + Combo7.ListIndex
+        SndData(3) = &HD9 + Combo7.ListIndex
         '附加信息设定
          Select Case SndData(3)
-            Case &HD0   '连接从机
-                 Call DevStateRefresh
-                 
-            Case &HD1   '单次检测
+            Case Z_CMD9_SINGLE   '单次检测
                  SndData(4) = StorageMode ' 第4位存储检测模式
-            Case &HD2   '循环检测
+            Case Z_CMD8_CYCLE   '循环检测
                 SndData(4) = StorageMode ' 第4位存储检测模式
                 SndData(5) = Val(TextHOUR.Text)
                 SndData(6) = Val(TextMIN.Text)
                 SndData(7) = Val(TextSEC.Text)
-            Case &HD3   '查询数据
+            Case Z_CMD8_STOP '终止检测
+                sStorageMode = 3
+                SndData(4) = StorageMode ' 第4位存储检测模式
+            Case Z_CMD8_GET_DATA   '查询数据
                 SndData(4) = Val(TextYY.Text - 2000)
                 SndData(5) = Val(TextMM.Text)
                 SndData(6) = Val(TextDD.Text)
-            Case &HD4   '同步时钟
+            Case Z_CMD8_SYNC   '同步时钟
                 SndData(4) = Val(TextYY.Text - 2000)
                 SndData(5) = Val(TextMM.Text)
                 SndData(6) = Val(TextDD.Text)
                 SndData(7) = Val(TextHOUR.Text)
                 SndData(8) = Val(TextMIN.Text)
                 SndData(9) = Val(TextSEC.Text)
-            Case &HD5  '终止检测
                  
         End Select
     
@@ -2814,7 +3200,7 @@ Private Sub Command9_Click()
     TextHOUR.Text = 0
     TextSEC.Text = 0
     Combo6.ListIndex = 0
-    Combo7.ListIndex = 2
+    Combo7.ListIndex = 1
     Call Command8_Click
     
 End Sub
@@ -2969,7 +3355,7 @@ End Sub
 '
 '在定时器2中处理接收数据的状态转移 以及数据处理
 Private Sub Timer2_Timer()
-List1.ListIndex = List1.ListCount - 1
+List1.ListIndex = List1.ListCount - 1 'list1 焦点放到最后一行上面
 'On Error GoTo commandreset
 Label_buffer.Caption = "BUF=" & RecBuf.Count
 Label_state.Caption = "STATE =" & RecState
@@ -3029,25 +3415,25 @@ RecCheckProcess:
                 
                    'Or CheckFrame(RecBuf(FrameEndTmp - 1), RecBuf(FrameEndTmp - 2)
                    ' List1.AddItem ("帧校验失败")    '如果帧长大于最大帧长 或者 帧长与帧内长度标识不符 或者crc校验失败  :移除帧头 返回空状态
-                    RecBuf.Remove (1)
-                    RecState = RecIdle
-                    GoTo DATAPROCESS
-                Else
-                 
+                    RecBuf.Remove (1) '删除帧头 相当于删除一帧数据
+                    RecState = RecIdle '恢复接收状态
+                    GoTo DATAPROCESS   '重新进入数据处理流程
+                Else '数据校验已经通过
+                '显示帧数据
                 str = "DEV: "
                 For i = 1 To FrameEndTmp
                     RecData(i) = RecBuf(1)
                     RecBuf.Remove (1)
                     '接收框显示命令
                     If (RecData(i) < 16) Then '此判断为显示补零
-                    blank = "0"
+                        blank = "0"
                     Else
-                    blank = ""
+                        blank = ""
                     End If
                     str = str & blank & Hex(RecData(i)) & " "
                 Next i
                 List1.AddItem (str)
-                RecState = RecDeal
+                RecState = RecDeal '进入数据提取流程
                 GoTo RECDEALPROCESSS
                End If
             Case RecDeal
@@ -3076,19 +3462,10 @@ RECDEALPROCESSS:
                                 Next xx
                                 
                             End If
-                        If DS1.DeviceCount > 0 Then
-                            For devcount_tmp = 0 To DS1.DeviceCount - 1 '遍历所有现有设备
-                                If DS1.DR(devcount_tmp).id = RecSrc Then '若存在重名 ID
-                                '此设备已经注册 不进行注册
-                                GoTo CMD1_EXIT_LABEL '跳出命令处理函数
-                                End If
-                            Next devcount_tmp
-                        Else '添加新设备
                             Call AddDevice(RecSrc, DeviceName)
                             Call Tab0Refresh 'tab1实时显示界面刷新
                             Call Tab1Refresh 'tab2实时显示界面刷新'添加combo6控件选项 电量设备名称
                             Combo6.AddItem (DeviceName)
-                        End If
                         List1.AddItem ("命令 = D0 搜索到从机")
                         List1.AddItem (" 从机编号:" & Hex(RecSrc) & " 从机名:" & DeviceName)
                        
@@ -3096,55 +3473,64 @@ CMD1_EXIT_LABEL:
                         RecState = RecIdle '清除命令状态 退出循环
                         Exit Sub
                     
-                        
+                    Dim tmp As Byte
                     Case &HD1   '将数据存入各自管道 如果收到包结束标识 开启处理流程
-                                'D1命令帧格式.
-                                'tmp = DeviceIDtoIndex(RecSrc)
-                               ' If (tmp = 255) Then
-                               '     Call AddDevice(RecSrc, "dev" & RecSrc)
-                               ' End If
-                               ' tmp = DeviceIDtoIndex(RecSrc)
-                                DS1.DR(0).Date = getString(RecData(), 6, 0)
+                                tmp = AddDevice(RecSrc, "noname")
+                                DS1.DR(tmp).Date = getString(RecData(), 6, 0)
                                 List1.AddItem ("命令 D1 收到日期")
                                 
                                 RecState = RecIdle
                                 Exit Sub
                     Case &HD2
-                                DS1.DR(0).Time = getString(RecData(), 6, 0)
+                                tmp = AddDevice(RecSrc, "noname")
+                                DS1.DR(tmp).Time = getString(RecData(), 6, 0)
                                 List1.AddItem ("命令 D2 收到时间")
                                 RecState = RecIdle
                                 Exit Sub
                     Case &HD3
-                                DS1.DR(0).Temperature = getString(RecData(), 6, 0)
+                                tmp = AddDevice(RecSrc, "noname")
+                                DS1.DR(tmp).Temperature = getString(RecData(), 6, 0)
                                 List1.AddItem ("命令 D3 收到温度")
                                 RecState = RecIdle
                                 Exit Sub
                     Case &HD4
-                                DS1.DR(0).WindSpeed = getString(RecData(), 6, 0)
+                                tmp = AddDevice(RecSrc, "noname")
+                                DS1.DR(tmp).WindSpeed = getString(RecData(), 6, 0)
                                 RecState = RecIdle
                                 Exit Sub
                     Case &HD5
-                                DS1.DR(0).WCI = getString(RecData(), 6, 0)
+                                tmp = AddDevice(RecSrc, "noname")
+                                DS1.DR(tmp).WCI = getString(RecData(), 6, 0)
                                 List1.AddItem ("命令 D5 WCI")
                                 RecState = RecIdle
                                 Exit Sub
                     Case &HD6
-                                DS1.DR(0).ECT = getString(RecData(), 6, 0)
+                                tmp = AddDevice(RecSrc, "noname")
+                                DS1.DR(tmp).ECT = getString(RecData(), 6, 0)
                                 List1.AddItem ("命令 D6 ETC")
                                 RecState = RecIdle
                                 Exit Sub
                     Case &HD7
-                                DS1.DR(0).TEQ = getString(RecData(), 6, 0)
+                                tmp = AddDevice(RecSrc, "noname")
+                                DS1.DR(tmp).TEQ = getString(RecData(), 6, 0)
                                 List1.AddItem ("命令 D7 TEQ")
                                 RecState = RecIdle
                     Case &HD8
-                                 DS1.DR(0).WeiHai = RecData(6)
-                                 DS1.DR(0).LowLabor = RecData(7)
-                                 DS1.DR(0).MidLabor = RecData(8)
-                                 DS1.DR(0).HighLabor = RecData(9)
-                                 
-                              
+                                tmp = AddDevice(RecSrc, "noname")
+                                DS1.DR(tmp).WeiHai = RecData(6)
+                                DS1.DR(tmp).LowLabor = RecData(7)
+                                DS1.DR(tmp).MidLabor = RecData(8)
+                                DS1.DR(tmp).HighLabor = RecData(9)
+                                                            
                                 Call Tab1Refresh
+                                If usedatabase = True Then
+                                    Call addRecord(tmp)
+                                    If db_auto_refresh = True Then
+                                            Adodc1.Refresh
+                                            Adodc1.Recordset.MoveLast
+                                    End If
+                                    
+                                End If
                                 RecState = RecIdle
                                 Exit Sub
                      Case Else
@@ -3170,20 +3556,36 @@ commandreset:
 
 End Sub
 
-Private Sub AddDevice(id As Byte, name As String)
-    DS1.DeviceCount = 1
-    DS1.DR(0).name = name
-End Sub
-
-Private Function DeviceIDtoIndex(id As Byte) As Byte
-    For tmp = 0 To DS1.DeviceCount - 1
-        If DS1.DR(tmp).id = id Then
-            DeviceIDtoIndex = tmp
-        Else
-            DeviceIDtoIndex = 255
-        End If
-    Next
+Public Function AddDevice(id As Byte, name As String) As Byte
+    If DS1.DeviceCount <= 0 Then
+        DS1.DeviceCount = 1
+        DS1.DR(0).name = name
+        DS1.DR(0).id = id
+        AddDevice = 0
+        'List1.AddItem ("NODEVICE")
+        Exit Function
+    Else
+        For tmpx = 0 To DS1.DeviceCount - 1
+            If DS1.DR(tmpx).id = id Then  '已有此ID
+                AddDevice = tmpx
+                'List1.AddItem ("找到ID" & id & " " & name)
+                If name <> "noname" Then
+                    DS1.DR(tmpx).name = name
+                End If
+                Exit Function
+            Else '无此ID,添加新设备
+                'List1.AddItem ("新增ID" & id & " " & name)
+                DS1.DeviceCount = DS1.DeviceCount + 1
+                DS1.DR(tmpx).name = name
+                DS1.DR(tmpx).id = id
+                AddDevice = tmpx
+                Exit Function
+            End If
+            
+        Next
+    End If
 End Function
+
 Private Function getString(buf() As Byte, buf_start As Byte, buf_end As Byte) As String
     getString1 = ""
     If buf_end = 0 Then
@@ -3216,7 +3618,7 @@ Private Sub DevStateRefresh()
             Combo6.ListIndex = 0
   For i = 0 To 5
     'If IsDevOn(i) = True Then
-            Label22(i).ForeColor = &HFF000
+      '      Label22(i).ForeColor = &HFF000
             'If Not DevName(i) = "" Then
             '    Label22(i).Caption = DevName(i)
            ' End If
@@ -3236,9 +3638,10 @@ Private Sub Tab0Refresh()
         Label22(tmp).Visible = False
     Next
     For tmp = 0 To DS1.DeviceCount - 1
-        Label22(tmp).Visible = True
-        Label22(tmp).Caption = DS1.DR(tmp).name
-        Label22(tmp).ForeColor = &HFF000
+        If tmp < 5 Then
+            Label22(tmp).Visible = True
+            Label22(tmp).Caption = DS1.DR(tmp).name
+        End If
     Next
     
 End Sub
@@ -3247,23 +3650,18 @@ End Sub
 
 
 '********************************界面2控件函数********************************
-'
-'保存数据 按钮
-Private Sub Command10_Click()
-'数据库添加数据语句
 
-End Sub
 '
 '自动保存数据 按钮
 Private Sub Command11_Click()
 '自动保存 数据结果有更新就自动保存到数据库
-If (AlwaysSaveToDb = False) Then
-    AlwaysSaveToDb = True
-    Command11.Caption = "关闭自动保存"
+If (usedatabase = False) Then
+    usedatabase = True
+    Command11.Caption = "自动保存：开"
      Command11.BackColor = &HFF000
 Else
-    AlwaysSaveToDb = False
-    Command11.Caption = "开启自动保存"
+    usedatabase = False
+    Command11.Caption = "自动保存：关"
     Command11.BackColor = &H8000000F
 End If
 
