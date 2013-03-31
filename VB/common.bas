@@ -10,10 +10,10 @@ WindSpeed As Single
 WCI As Single
 ECT As Single
 TEQ As Single
-WeiHai As Byte
-LowLabor As Byte
-MidLabor As Byte
-HighLabor As Byte
+WeiHai As String
+LowLabor As String
+MidLabor As String
+HighLabor As String
 End Type
 
 Public Type DeviceState

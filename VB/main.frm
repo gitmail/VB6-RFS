@@ -46,54 +46,73 @@ Begin VB.Form main
       _ExtentX        =   24575
       _ExtentY        =   14838
       _Version        =   393216
+      Tab             =   1
       TabHeight       =   520
       ForeColor       =   -2147483641
       TabCaption(0)   =   "通讯设置(F2)"
       TabPicture(0)   =   "main.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Label21"
-      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "TextSend"
-      Tab(0).Control(1).Enabled=   0   'False
       Tab(0).Control(2)=   "Command4"
-      Tab(0).Control(2).Enabled=   0   'False
       Tab(0).Control(3)=   "Frame2"
-      Tab(0).Control(3).Enabled=   0   'False
       Tab(0).Control(4)=   "Frame1"
-      Tab(0).Control(4).Enabled=   0   'False
       Tab(0).Control(5)=   "Frame3"
-      Tab(0).Control(5).Enabled=   0   'False
       Tab(0).Control(6)=   "Frame4"
-      Tab(0).Control(6).Enabled=   0   'False
       Tab(0).ControlCount=   7
       TabCaption(1)   =   " 实时显示（&F3)"
       TabPicture(1)   =   "main.frx":001C
-      Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Command11"
-      Tab(1).Control(1)=   "Channel(5)"
-      Tab(1).Control(2)=   "Channel(4)"
-      Tab(1).Control(3)=   "Channel(3)"
-      Tab(1).Control(4)=   "Channel(2)"
-      Tab(1).Control(5)=   "Channel(0)"
-      Tab(1).Control(6)=   "Channel(1)"
-      Tab(1).Control(7)=   "LabelUnconnect"
-      Tab(1).Control(8)=   "Line1"
-      Tab(1).Control(9)=   "Line7"
-      Tab(1).Control(10)=   "Label4"
-      Tab(1).Control(11)=   "Label13"
+      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).Control(0)=   "Line4"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "Line3"
+      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).Control(2)=   "Line2"
+      Tab(1).Control(2).Enabled=   0   'False
+      Tab(1).Control(3)=   "Label14"
+      Tab(1).Control(3).Enabled=   0   'False
+      Tab(1).Control(4)=   "Label3"
+      Tab(1).Control(4).Enabled=   0   'False
+      Tab(1).Control(5)=   "Label5"
+      Tab(1).Control(5).Enabled=   0   'False
+      Tab(1).Control(6)=   "Label6"
+      Tab(1).Control(6).Enabled=   0   'False
+      Tab(1).Control(7)=   "Label7"
+      Tab(1).Control(7).Enabled=   0   'False
+      Tab(1).Control(8)=   "Label8"
+      Tab(1).Control(8).Enabled=   0   'False
+      Tab(1).Control(9)=   "Label9"
+      Tab(1).Control(9).Enabled=   0   'False
+      Tab(1).Control(10)=   "Label10"
+      Tab(1).Control(10).Enabled=   0   'False
+      Tab(1).Control(11)=   "Label11"
+      Tab(1).Control(11).Enabled=   0   'False
       Tab(1).Control(12)=   "Label12"
-      Tab(1).Control(13)=   "Label11"
-      Tab(1).Control(14)=   "Label10"
-      Tab(1).Control(15)=   "Label9"
-      Tab(1).Control(16)=   "Label8"
-      Tab(1).Control(17)=   "Label7"
-      Tab(1).Control(18)=   "Label6"
-      Tab(1).Control(19)=   "Label5"
-      Tab(1).Control(20)=   "Label3"
-      Tab(1).Control(21)=   "Label14"
-      Tab(1).Control(22)=   "Line2"
-      Tab(1).Control(23)=   "Line3"
-      Tab(1).Control(24)=   "Line4"
+      Tab(1).Control(12).Enabled=   0   'False
+      Tab(1).Control(13)=   "Label13"
+      Tab(1).Control(13).Enabled=   0   'False
+      Tab(1).Control(14)=   "Label4"
+      Tab(1).Control(14).Enabled=   0   'False
+      Tab(1).Control(15)=   "Line7"
+      Tab(1).Control(15).Enabled=   0   'False
+      Tab(1).Control(16)=   "Line1"
+      Tab(1).Control(16).Enabled=   0   'False
+      Tab(1).Control(17)=   "LabelUnconnect"
+      Tab(1).Control(17).Enabled=   0   'False
+      Tab(1).Control(18)=   "Channel(1)"
+      Tab(1).Control(18).Enabled=   0   'False
+      Tab(1).Control(19)=   "Channel(0)"
+      Tab(1).Control(19).Enabled=   0   'False
+      Tab(1).Control(20)=   "Channel(2)"
+      Tab(1).Control(20).Enabled=   0   'False
+      Tab(1).Control(21)=   "Channel(3)"
+      Tab(1).Control(21).Enabled=   0   'False
+      Tab(1).Control(22)=   "Channel(4)"
+      Tab(1).Control(22).Enabled=   0   'False
+      Tab(1).Control(23)=   "Channel(5)"
+      Tab(1).Control(23).Enabled=   0   'False
+      Tab(1).Control(24)=   "Command11"
+      Tab(1).Control(24).Enabled=   0   'False
       Tab(1).ControlCount=   25
       TabCaption(2)   =   "数据查询(F4)"
       TabPicture(2)   =   "main.frx":0038
@@ -211,7 +230,7 @@ Begin VB.Form main
          Caption         =   "自动保存:开"
          CausesValidation=   0   'False
          Height          =   495
-         Left            =   -62640
+         Left            =   12360
          TabIndex        =   13
          Top             =   360
          Width           =   1455
@@ -220,7 +239,7 @@ Begin VB.Form main
          Caption         =   "Frame5"
          Height          =   7452
          Index           =   5
-         Left            =   -63800
+         Left            =   11200
          TabIndex        =   83
          Top             =   840
          Visible         =   0   'False
@@ -410,7 +429,7 @@ Begin VB.Form main
          Caption         =   "Frame5"
          Height          =   7452
          Index           =   4
-         Left            =   -65600
+         Left            =   9400
          TabIndex        =   81
          Top             =   840
          Visible         =   0   'False
@@ -482,9 +501,9 @@ Begin VB.Form main
             EndProperty
             Height          =   252
             Index           =   4
-            Left            =   360
+            Left            =   240
             TabIndex        =   119
-            Top             =   2640
+            Top             =   2760
             Width           =   852
          End
          Begin VB.Label LabelFECT 
@@ -500,9 +519,9 @@ Begin VB.Form main
             EndProperty
             Height          =   252
             Index           =   4
-            Left            =   360
+            Left            =   240
             TabIndex        =   118
-            Top             =   2280
+            Top             =   2400
             Width           =   1092
          End
          Begin VB.Label LabelFWSC 
@@ -520,7 +539,7 @@ Begin VB.Form main
             Index           =   4
             Left            =   360
             TabIndex        =   117
-            Top             =   1920
+            Top             =   2040
             Width           =   972
          End
          Begin VB.Label LabelFWindSpeed 
@@ -538,7 +557,7 @@ Begin VB.Form main
             Index           =   4
             Left            =   360
             TabIndex        =   116
-            Top             =   1560
+            Top             =   1680
             Width           =   492
          End
          Begin VB.Label LabelFTemp 
@@ -556,7 +575,7 @@ Begin VB.Form main
             Index           =   4
             Left            =   240
             TabIndex        =   115
-            Top             =   1200
+            Top             =   1320
             Width           =   1092
          End
          Begin VB.Label LabelFTime 
@@ -600,7 +619,7 @@ Begin VB.Form main
          Caption         =   "Frame5"
          Height          =   7452
          Index           =   3
-         Left            =   -67400
+         Left            =   7600
          TabIndex        =   80
          Top             =   840
          Visible         =   0   'False
@@ -710,7 +729,7 @@ Begin VB.Form main
             Index           =   3
             Left            =   360
             TabIndex        =   110
-            Top             =   1920
+            Top             =   2040
             Width           =   972
          End
          Begin VB.Label LabelFWindSpeed 
@@ -728,7 +747,7 @@ Begin VB.Form main
             Index           =   3
             Left            =   360
             TabIndex        =   109
-            Top             =   1560
+            Top             =   1680
             Width           =   492
          End
          Begin VB.Label LabelFTemp 
@@ -746,7 +765,7 @@ Begin VB.Form main
             Index           =   3
             Left            =   240
             TabIndex        =   108
-            Top             =   1200
+            Top             =   1320
             Visible         =   0   'False
             Width           =   1092
          End
@@ -791,7 +810,7 @@ Begin VB.Form main
          Caption         =   "Frame5"
          Height          =   7452
          Index           =   2
-         Left            =   -69200
+         Left            =   5800
          TabIndex        =   79
          Top             =   840
          Visible         =   0   'False
@@ -901,7 +920,7 @@ Begin VB.Form main
             Index           =   2
             Left            =   240
             TabIndex        =   103
-            Top             =   1920
+            Top             =   2040
             Width           =   972
          End
          Begin VB.Label LabelFWindSpeed 
@@ -919,7 +938,7 @@ Begin VB.Form main
             Index           =   2
             Left            =   240
             TabIndex        =   102
-            Top             =   1560
+            Top             =   1680
             Width           =   492
          End
          Begin VB.Label LabelFTemp 
@@ -937,7 +956,7 @@ Begin VB.Form main
             Index           =   2
             Left            =   240
             TabIndex        =   101
-            Top             =   1200
+            Top             =   1320
             Width           =   1092
          End
          Begin VB.Label LabelFTime 
@@ -980,7 +999,7 @@ Begin VB.Form main
       Begin VB.Frame Frame4 
          Caption         =   "串口监视："
          Height          =   6135
-         Left            =   8280
+         Left            =   -66720
          TabIndex        =   69
          Top             =   720
          Width           =   5295
@@ -993,12 +1012,12 @@ Begin VB.Form main
             Width           =   1095
          End
          Begin VB.ListBox List1 
-            Height          =   5628
+            Height          =   5448
             Left            =   0
             OLEDragMode     =   1  'Automatic
             TabIndex        =   70
-            Top             =   0
-            Width           =   5655
+            Top             =   240
+            Width           =   5652
          End
          Begin VB.Label Label_buffer 
             BackColor       =   &H80000017&
@@ -1042,7 +1061,7 @@ Begin VB.Form main
       Begin VB.Frame Frame3 
          Caption         =   "数据采集设定"
          Height          =   6135
-         Left            =   2520
+         Left            =   -72480
          TabIndex        =   53
          Top             =   600
          Width           =   5535
@@ -1080,12 +1099,12 @@ Begin VB.Form main
             Width           =   1095
          End
          Begin VB.ComboBox Combo8 
-            Height          =   300
+            Height          =   276
             Left            =   1440
             Style           =   2  'Dropdown List
             TabIndex        =   75
             Top             =   3000
-            Width           =   1215
+            Width           =   1572
          End
          Begin VB.CommandButton Command8 
             Caption         =   "3 发送命令(&G)"
@@ -1411,7 +1430,7 @@ Begin VB.Form main
       Begin VB.Frame Frame1 
          Caption         =   "串口设置"
          Height          =   4455
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   24
          Top             =   600
          Width           =   2055
@@ -1594,7 +1613,7 @@ Begin VB.Form main
       Begin VB.Frame Frame2 
          Caption         =   "从机状态"
          Height          =   2415
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   20
          Top             =   5160
          Width           =   2055
@@ -1699,14 +1718,14 @@ Begin VB.Form main
       Begin VB.CommandButton Command4 
          Caption         =   "发送(&s)"
          Height          =   372
-         Left            =   12480
+         Left            =   -62520
          TabIndex        =   19
          Top             =   7200
          Width           =   1095
       End
       Begin VB.TextBox TextSend 
          Height          =   372
-         Left            =   3720
+         Left            =   -71280
          TabIndex        =   18
          Top             =   7200
          Width           =   8655
@@ -1715,9 +1734,10 @@ Begin VB.Form main
          Caption         =   "Frame5"
          Height          =   7452
          Index           =   0
-         Left            =   -72800
+         Left            =   2200
          TabIndex        =   77
          Top             =   840
+         Visible         =   0   'False
          Width           =   1800
          Begin VB.TextBox TextFMid 
             Appearance      =   0  'Flat
@@ -1904,7 +1924,7 @@ Begin VB.Form main
          ForeColor       =   &H00000000&
          Height          =   7452
          Index           =   1
-         Left            =   -71000
+         Left            =   4000
          TabIndex        =   78
          Top             =   840
          Visible         =   0   'False
@@ -2050,7 +2070,7 @@ Begin VB.Form main
             Index           =   1
             Left            =   240
             TabIndex        =   94
-            Top             =   1200
+            Top             =   1320
             Width           =   1092
          End
          Begin VB.Label LabelFTime 
@@ -2092,13 +2112,13 @@ Begin VB.Form main
       End
       Begin MSDataGridLib.DataGrid DataGrid0 
          Bindings        =   "main.frx":019E
-         Height          =   6972
-         Left            =   -74760
+         Height          =   7212
+         Left            =   -74880
          TabIndex        =   152
          Top             =   1200
-         Width           =   13452
-         _ExtentX        =   23728
-         _ExtentY        =   12298
+         Width           =   13692
+         _ExtentX        =   24151
+         _ExtentY        =   12721
          _Version        =   393216
          HeadLines       =   1
          RowHeight       =   15
@@ -2127,7 +2147,7 @@ Begin VB.Form main
             Caption         =   "编号"
             BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
                Type            =   0
-               Format          =   ""
+               Format          =   "0%"
                HaveTrueFalseNull=   0
                FirstDayOfWeek  =   0
                FirstWeekOfYear =   0
@@ -2341,12 +2361,13 @@ Begin VB.Form main
                ColumnWidth     =   996.095
             EndProperty
             BeginProperty Column11 
-               ColumnWidth     =   1008
+               ColumnWidth     =   1440
             EndProperty
             BeginProperty Column12 
+               ColumnWidth     =   1463.811
             EndProperty
             BeginProperty Column13 
-               ColumnWidth     =   924.095
+               ColumnWidth     =   1523.906
             EndProperty
          EndProperty
       End
@@ -2393,7 +2414,7 @@ Begin VB.Form main
          Width           =   372
       End
       Begin VB.Label LabelUnconnect 
-         Caption         =   "检测仪全部断开连接，请重连。"
+         Caption         =   "检测仪全部断开连接，请搜索或等待10秒后从机自动连接。"
          BeginProperty Font 
             Name            =   "宋体"
             Size            =   36
@@ -2403,23 +2424,22 @@ Begin VB.Form main
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1575
-         Left            =   -71040
+         Height          =   3012
+         Left            =   3120
          TabIndex        =   84
-         Top             =   3600
-         Visible         =   0   'False
-         Width           =   9375
+         Top             =   2160
+         Width           =   9732
       End
       Begin VB.Line Line1 
          BorderStyle     =   5  'Dash-Dot-Dot
-         X1              =   -74760
-         X2              =   -72600
+         X1              =   240
+         X2              =   2400
          Y1              =   1200
          Y2              =   1200
       End
       Begin VB.Line Line7 
-         X1              =   -75000
-         X2              =   -75000
+         X1              =   0
+         X2              =   0
          Y1              =   0
          Y2              =   6960
       End
@@ -2435,7 +2455,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   46
          Top             =   1680
          Width           =   1692
@@ -2452,7 +2472,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   45
          Top             =   7080
          Width           =   1692
@@ -2469,7 +2489,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   44
          Top             =   5640
          Width           =   2055
@@ -2486,7 +2506,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   43
          Top             =   4440
          Width           =   1692
@@ -2503,7 +2523,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   372
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   42
          Top             =   4080
          Width           =   1932
@@ -2520,7 +2540,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   41
          Top             =   3600
          Width           =   1692
@@ -2537,7 +2557,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   40
          Top             =   3240
          Width           =   2292
@@ -2554,7 +2574,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   39
          Top             =   2880
          Width           =   1692
@@ -2571,7 +2591,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   38
          Top             =   2520
          Width           =   1692
@@ -2588,7 +2608,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   37
          Top             =   2160
          Width           =   1692
@@ -2605,7 +2625,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   36
          Top             =   840
          Width           =   2172
@@ -2622,29 +2642,29 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   300
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   35
          Top             =   1320
          Width           =   1692
       End
       Begin VB.Line Line2 
          BorderStyle     =   5  'Dash-Dot-Dot
-         X1              =   -75000
-         X2              =   -72600
+         X1              =   0
+         X2              =   2400
          Y1              =   0
          Y2              =   0
       End
       Begin VB.Line Line3 
          BorderStyle     =   5  'Dash-Dot-Dot
-         X1              =   -74760
-         X2              =   -72720
+         X1              =   240
+         X2              =   2280
          Y1              =   2040
          Y2              =   2040
       End
       Begin VB.Line Line4 
          BorderStyle     =   5  'Dash-Dot-Dot
-         X1              =   -74760
-         X2              =   -72720
+         X1              =   240
+         X2              =   2280
          Y1              =   3960
          Y2              =   3960
       End
@@ -2660,7 +2680,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   2400
+         Left            =   -72600
          TabIndex        =   34
          Top             =   7200
          Width           =   1455
@@ -2764,9 +2784,25 @@ Const Z_CMD12_SYNC = &HDC
 '命令12 同步时钟
 Const Z_CMD13_GET_DATA = &HDD
 '命令13 请求数据
-Const Z_CMD14_SET_STORAGE = &HDE
-'命令14 设置存储位置
 
+Const WEIHAI1 = "冻伤危害性小"
+Const WEIHAI2 = "冻伤危害性较大"
+Const WEIHAI3 = "冻伤危害性很大"
+
+Const LOW1 = "戴面罩；缩短作业时间。"
+Const LOW2 = "戴面罩；禁涂油彩;缩短作业时间."
+Const LOW3 = "取消非必需作业；必需劳动时间<15 min；禁止单独作业；保持皮肤干燥，禁止裸露。"
+Const LOW4 = "取消户外作业。"
+
+Const MID1 = "加强劳动监督；保持皮肤干燥，禁止裸露。"
+Const MID2 = "加强劳动监督；保持皮肤干燥，禁止裸露；禁涂油彩。"
+Const MID3 = "加强劳动监督；保持皮肤干燥，禁止裸露；戴面罩；禁涂油彩。"
+Const MID4 = "加强劳动监督；减少非必需的作业；必需劳动时间<30 min。"
+Const MID5 = "取消户外作业。"
+
+Const HIGH1 = "加强劳动监督；增加饮水；保持皮肤干燥，禁止裸露。"
+Const HIGH2 = "禁涂油彩;保持皮肤干燥，禁止裸露；休息时注意保暖。"
+Const HIGH3 = "取消非必需的作业；必需劳动时间<15 min；禁止单独作业；保持皮肤干燥，禁止裸露。"
 
 'id
 Const DEV1ID = &HB1
@@ -2815,6 +2851,12 @@ Dim RecBuf As Collection
 '
 '初始化程序
 Private Sub Form_Load()
+DataGrid0.RowHeight = 750
+           
+DataGrid0.Columns(10).WrapText = True
+DataGrid0.Columns(11).WrapText = True
+DataGrid0.Columns(12).WrapText = True
+DataGrid0.Columns(13).WrapText = True
 '当前时间显示
 LabelTime.Caption = Now
 
@@ -2867,14 +2909,12 @@ Combo7.List(1) = "循环检测"
 Combo7.List(2) = "终止检测"
 Combo7.List(3) = "同步时钟"
 Combo7.List(4) = "查询数据"
-
-
-Combo7.ListIndex = 1
+Combo7.ListIndex = 0
 '数据存储方式选择
-Combo8.List(0) = "计算机+检测仪"
-Combo8.List(1) = "计算机"
-Combo8.List(2) = "检测仪"
-Combo8.ListIndex = 1
+Combo8.List(0) = "计算机"
+Combo8.List(1) = "检测仪"
+Combo8.List(2) = "计算机+检测仪"
+Combo8.ListIndex = 2
 '''''''''''''''''''''''''''''''''''''
 '按Command2键的快捷键设定
 Command2.Caption = "打开串口(&O)"
@@ -2932,7 +2972,7 @@ Private Sub DB查询bt_Click()
     If data_ck_txt.Text <> "" Then
          wherestr = " and 日期=#" & data_ck_txt.Text & "#" & wherestr
     End If
-    List1.AddItem (wherestr)
+    'List1.AddItem (wherestr)
     wherestr = " where 1=1" & wherestr
     Adodc1.RecordSource = "select * from 设备数据" & wherestr
     Adodc1.Refresh
@@ -3062,7 +3102,7 @@ Private Sub Command4_Click()
  If (MSComm1.PortOpen = False) Then '判断串口有没有开启
         If MsgBox("串口未开启，是否开启？", vbYesNo) = vbYes Then
                 Call Command2_Click
-                List1.AddItem ("yes")
+               ' List1.AddItem ("yes")
         Else
             Exit Sub
         End If
@@ -3105,7 +3145,8 @@ Else
             Combo6.AddItem ("全部从机")
             '设置显示默认选项
             Combo6.ListIndex = 0
-            Call Tab1Refresh  '重绘实时显示界面
+            'Call Tab1Refresh  '重绘实时显示界面
+            
             SndCount = 0      '充值发送计数
 
 End If
@@ -3117,7 +3158,6 @@ Private Sub Command6_Click()
 '如果清空按下 清空串口收发计数
 Label28.Caption = 0
 Label29.Caption = 0
-Call Tab1Refresh
 End Sub
 
 
@@ -3127,6 +3167,11 @@ Private Sub Command7_Click()
 '清空串口接收区的显示
 List1.Clear
 End Sub
+Private Function dec2bcd(decnum As Byte) As Byte
+    dec2bcd = Int(decnum / 10) * 16 + (decnum Mod 10)
+End Function
+
+
 
 '
 '发送命令 按钮
@@ -3164,26 +3209,30 @@ Private Sub Command8_Click()
          Select Case SndData(3)
             Case Z_CMD9_SINGLE   '单次检测
                  SndData(4) = StorageMode ' 第4位存储检测模式
-            Case Z_CMD8_CYCLE   '循环检测
+            Case Z_CMD10_CYCLE   '循环检测
                 SndData(4) = StorageMode ' 第4位存储检测模式
                 SndData(5) = Val(TextHOUR.Text)
                 SndData(6) = Val(TextMIN.Text)
                 SndData(7) = Val(TextSEC.Text)
-            Case Z_CMD8_STOP '终止检测
-                sStorageMode = 3
+            Case Z_CMD11_STOP '终止检测
+                StorageMode = 3
                 SndData(4) = StorageMode ' 第4位存储检测模式
-            Case Z_CMD8_GET_DATA   '查询数据
+            Case Z_CMD12_SYNC   '同步时钟
+                SndData(4) = dec2bcd(Val(TextYY.Text - 2000))
+                
+                SndData(5) = dec2bcd(Val(TextMM.Text))
+                
+                SndData(6) = dec2bcd(Val(TextDD.Text))
+                
+                SndData(7) = dec2bcd(Val(TextHOUR.Text))
+                
+                SndData(8) = dec2bcd(Val(TextMIN.Text))
+                
+                SndData(9) = dec2bcd(Val(TextSEC.Text))
+            Case Z_CMD13_GET_DATA   '查询数据
                 SndData(4) = Val(TextYY.Text - 2000)
                 SndData(5) = Val(TextMM.Text)
                 SndData(6) = Val(TextDD.Text)
-            Case Z_CMD8_SYNC   '同步时钟
-                SndData(4) = Val(TextYY.Text - 2000)
-                SndData(5) = Val(TextMM.Text)
-                SndData(6) = Val(TextDD.Text)
-                SndData(7) = Val(TextHOUR.Text)
-                SndData(8) = Val(TextMIN.Text)
-                SndData(9) = Val(TextSEC.Text)
-                 
         End Select
     
     SndCount = 13
@@ -3450,6 +3499,7 @@ RECDEALPROCESSS:
                 RecSrc = RecData(4)
                 RecCmd = RecData(5)
                 
+        Dim tmp As Byte
         If RecDest = 0 Then
                 Select Case RecCmd
                     Case &HD0   '从机返回设备信息命令
@@ -3462,18 +3512,17 @@ RECDEALPROCESSS:
                                 Next xx
                                 
                             End If
-                            Call AddDevice(RecSrc, DeviceName)
+                            tmp = AddDevice(RecSrc, DeviceName)
+                           ' List1.AddItem ("newid=" & RecSrc & " " & "newindex=" & tmp)
                             Call Tab0Refresh 'tab1实时显示界面刷新
-                            Call Tab1Refresh 'tab2实时显示界面刷新'添加combo6控件选项 电量设备名称
-                            Combo6.AddItem (DeviceName)
-                        List1.AddItem ("命令 = D0 搜索到从机")
-                        List1.AddItem (" 从机编号:" & Hex(RecSrc) & " 从机名:" & DeviceName)
+                            Call Tab1Refresh(tmp) 'tab2实时显示界面刷新'添加combo6控件选项 电量设备名称
+                            List1.AddItem (" 从机编号:" & Hex(RecSrc) & " 从机名:" & DeviceName)
                        
 CMD1_EXIT_LABEL:
                         RecState = RecIdle '清除命令状态 退出循环
                         Exit Sub
                     
-                    Dim tmp As Byte
+                    
                     Case &HD1   '将数据存入各自管道 如果收到包结束标识 开启处理流程
                                 tmp = AddDevice(RecSrc, "noname")
                                 DS1.DR(tmp).Date = getString(RecData(), 6, 0)
@@ -3517,17 +3566,57 @@ CMD1_EXIT_LABEL:
                                 RecState = RecIdle
                     Case &HD8
                                 tmp = AddDevice(RecSrc, "noname")
-                                DS1.DR(tmp).WeiHai = RecData(6)
-                                DS1.DR(tmp).LowLabor = RecData(7)
-                                DS1.DR(tmp).MidLabor = RecData(8)
-                                DS1.DR(tmp).HighLabor = RecData(9)
-                                                            
-                                Call Tab1Refresh
+                                
+                                
+                                If RecData(6) = &H30 Then
+                                     DS1.DR(tmp).WeiHai = WEIHAI1
+                                ElseIf RecData(6) = &H31 Then
+                                     DS1.DR(tmp).WeiHai = WEIHAI2
+                                ElseIf RecData(6) = &H32 Then
+                                     DS1.DR(tmp).WeiHai = WEIHAI3
+                                End If
+                                 '低强度劳动
+                                If RecData(7) = &H30 Then
+                                     DS1.DR(tmp).LowLabor = LOW1
+                                ElseIf RecData(7) = &H31 Then
+                                     DS1.DR(tmp).LowLabor = LOW2
+                                ElseIf RecData(7) = &H32 Then
+                                     DS1.DR(tmp).LowLabor = LOW3
+                                Else
+                                     DS1.DR(tmp).LowLabor = LOW4
+                                End If
+                         
+                                 '中强度劳动
+                                If RecData(8) = &H30 Then
+                                    DS1.DR(tmp).MidLabor = MID1
+                                ElseIf RecData(8) = &H31 Then
+                                    DS1.DR(tmp).MidLabor = MID2
+                                ElseIf RecData(8) = &H32 Then
+                                    DS1.DR(tmp).MidLabor = MID3
+                                ElseIf RecData(8) = &H33 Then
+                                    DS1.DR(tmp).MidLabor = MID4
+                                Else
+                                    DS1.DR(tmp).MidLabor = MID5
+                                End If
+                                
+                                '高强度劳动
+                                If RecData(9) = &H30 Then
+                                    DS1.DR(tmp).HighLabor = HIGH1
+                                ElseIf RecData(9) = &H31 Then
+                                    DS1.DR(tmp).HighLabor = HIGH2
+                                Else
+                                    DS1.DR(tmp).HighLabor = HIGH3
+                                End If
+                                '数据接收完毕刷新数据显示
+                                Call Tab1Refresh(tmp)
                                 If usedatabase = True Then
                                     Call addRecord(tmp)
+                                    Adodc1.Refresh
+                                    DataGrid0.Refresh
                                     If db_auto_refresh = True Then
-                                            Adodc1.Refresh
-                                            Adodc1.Recordset.MoveLast
+                                            If Adodc1.Recordset.RecordCount <> 0 Then
+                                                Adodc1.Recordset.MoveLast
+                                            End If
                                     End If
                                     
                                 End If
@@ -3562,27 +3651,34 @@ Public Function AddDevice(id As Byte, name As String) As Byte
         DS1.DR(0).name = name
         DS1.DR(0).id = id
         AddDevice = 0
+        LabelUnconnect.Visible = False
         'List1.AddItem ("NODEVICE")
         Exit Function
     Else
         For tmpx = 0 To DS1.DeviceCount - 1
+        'List1.AddItem ("findindex=" & tmpx)
             If DS1.DR(tmpx).id = id Then  '已有此ID
                 AddDevice = tmpx
-                'List1.AddItem ("找到ID" & id & " " & name)
+                List1.AddItem ("找到ID" & id & " " & name)
                 If name <> "noname" Then
                     DS1.DR(tmpx).name = name
                 End If
                 Exit Function
-            Else '无此ID,添加新设备
-                'List1.AddItem ("新增ID" & id & " " & name)
-                DS1.DeviceCount = DS1.DeviceCount + 1
-                DS1.DR(tmpx).name = name
-                DS1.DR(tmpx).id = id
-                AddDevice = tmpx
-                Exit Function
             End If
-            
         Next
+         
+            '无此ID,添加新设备
+            'List1.AddItem ("新增ID" & id & " " & name)
+           ' List1.AddItem ("nowDevicecount=" & DS1.DeviceCount)
+            DS1.DeviceCount = DS1.DeviceCount + 1
+          '  List1.AddItem ("nowDevicecount=" & DS1.DeviceCount)
+            DS1.DR(DS1.DeviceCount - 1).name = name
+            DS1.DR(DS1.DeviceCount - 1).id = id
+            AddDevice = DS1.DeviceCount - 1
+            Combo6.AddItem (name)
+            Exit Function
+                  
+       
     End If
 End Function
 
@@ -3604,33 +3700,6 @@ Private Function getString(buf() As Byte, buf_start As Byte, buf_end As Byte) As
     End If
 End Function
 
-'
-'设置从机状态
-
-
-'
-'刷新从机状态
-Private Sub DevStateRefresh()
-            Combo6.Clear
-            '添加默认从机选项
-            Combo6.AddItem ("全部从机")
-            '设置显示默认选项
-            Combo6.ListIndex = 0
-  For i = 0 To 5
-    'If IsDevOn(i) = True Then
-      '      Label22(i).ForeColor = &HFF000
-            'If Not DevName(i) = "" Then
-            '    Label22(i).Caption = DevName(i)
-           ' End If
-           ' Combo6.AddItem (DevName(i))
-   ' Else
-           ' Label22(i).ForeColor = &H8000000A
-           ' Label22(i).Caption = "Device" & i
-           ' DevName(i) = Label22(i).Caption
-   ' End If
-  Next
-    
-End Sub
 'TAB0 重绘
 Private Sub Tab0Refresh()
     '刷新从机状态显示
@@ -3670,59 +3739,27 @@ End Sub
 
 'tab2 显示相关函数
 '说明： 根据当前活跃的从机数，安排TAB2中显示布局
-Private Sub Tab1Refresh()
+Private Sub Tab1Refresh(Index As Byte)
     tmp_tab = SSTab1.Tab
+    
     SSTab1.Tab = 1
-            Channel(0).Visible = True
-            Channel(0).Caption = DS1.DR(0).name
-            LabelDate(0).Caption = DS1.DR(0).Date
-            LabelFTime(0).Caption = DS1.DR(0).Time
-            LabelFTemp(0).Caption = Format(DS1.DR(0).Temperature, "0.0") & " " & "℃"
-            LabelFWindSpeed(0).Caption = Format(DS1.DR(0).WindSpeed, "0.0") & " " & "m/s"
-            LabelFWSC(0).Caption = Format(DS1.DR(0).WCI, "0.0")
-            LabelFECT(0).Caption = Format(DS1.DR(0).ECT, "0.0") & " " & "℃"
-            LabelFTeq(0).Caption = Format(DS1.DR(0).TEQ, "0.0") & " " & "℃"
-            
-            If DS1.DR(0).WeiHai = &H30 Then
-                Labelweihai(0).Caption = "冻伤危害性小"
-            ElseIf DS1.DR(0).WeiHai = &H31 Then
-                Labelweihai(0).Caption = "冻伤危害性较大"
-            ElseIf DS1.DR(0).WeiHai = &H32 Then
-                Labelweihai(0).Caption = "冻伤危害性很大"
-            End If
-             '低强度劳动
-            If DS1.DR(0).LowLabor = &H30 Then
-                 TextFLow(0).Text = "缩短作业时间。"
-            ElseIf DS1.DR(0).LowLabor = &H31 Then
-                 TextFLow(0).Text = "戴面罩；禁涂油彩;缩短作业时间."
-            ElseIf DS1.DR(0).LowLabor = &H32 Then
-                 TextFLow(0).Text = "取消非必需作业；必需劳动时间<15 min；禁止单独作业；保持皮肤干燥，禁止裸露。"
-            Else
-                 TextFLow(0).Text = "取消户外作业。"
-            End If
-                         
-             '中强度劳动
-            If DS1.DR(0).MidLabor = &H30 Then
-                TextFMid(0).Text = "加强劳动监督；保持皮肤干燥，禁止裸露。"
-            ElseIf DS1.DR(0).MidLabor = &H31 Then
-                TextFMid(0).Text = "加强劳动监督；保持皮肤干燥，禁止裸露；禁涂油彩。"
-            ElseIf DS1.DR(0).MidLabor = &H32 Then
-                TextFMid(0).Text = "加强劳动监督；保持皮肤干燥，禁止裸露；戴面罩；禁涂油彩。"
-            ElseIf DS1.DR(0).MidLabor = &H33 Then
-                TextFMid(0).Text = "加强劳动监督；减少非必需的作业；必需劳动时间<30 min。。"
-            Else
-                TextFMid(0).Text = "取消户外作业。"
-            End If
-                                
-            '高强度劳动
-            If DS1.DR(0).HighLabor = &H30 Then
-                TextFHigh(0).Text = "加强劳动监督；增加饮水；保持皮肤干燥，禁止裸露。"
-            ElseIf DS1.DR(0).HighLabor = &H31 Then
-                TextFHigh(0).Text = "禁涂油彩;保持皮肤干燥，禁止裸露；休息时注意保暖。"
-            Else
-                TextFHigh(0).Text = "取消非必需的作业；必需劳动时间<15 min；禁止单独作业；保持皮肤干燥，禁止裸露。"
-            End If
-    SSTab1.Tab = tmp_tab
+            Channel(Index).Visible = True
+           ' List1.AddItem ("channel=" & Index)
+            Channel(Index).Caption = DS1.DR(Index).name
+            LabelDate(Index).Caption = DS1.DR(Index).Date
+            LabelFTime(Index).Caption = DS1.DR(Index).Time
+            LabelFTemp(Index).Caption = Format(DS1.DR(Index).Temperature, "0.0") & " " & "℃"
+            LabelFWindSpeed(Index).Caption = Format(DS1.DR(Index).WindSpeed, "0.0") & " " & "m/s"
+            LabelFWSC(Index).Caption = Format(DS1.DR(Index).WCI, "0.0")
+            LabelFECT(Index).Caption = Format(DS1.DR(Index).ECT, "0.0") & " " & "℃"
+            LabelFTeq(Index).Caption = Format(DS1.DR(Index).TEQ, "0.0") & " " & "℃"
+        
+            Labelweihai(Index).Caption = DS1.DR(Index).WeiHai
+            TextFLow(Index).Text = DS1.DR(Index).LowLabor
+            TextFMid(Index).Text = DS1.DR(Index).MidLabor
+            TextFHigh(Index).Text = DS1.DR(Index).HighLabor
+             
+     SSTab1.Tab = tmp_tab
 End Sub
 
 '**************************************************************************************************
