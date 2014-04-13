@@ -1,9 +1,9 @@
 Attribute VB_Name = "Module1"
-Public Conn As New ADODB.Connection
-Public rs As New ADODB.Recordset
+Public Conn As New adodb.Connection
+Public rs As New adodb.Recordset
 '定义设备信息结构体
 Public DS1 As DeviceState
-Public Function adodbjet(Optional DBfile As String, Optional pwd As String) As ADODB.Connection
+Public Function adodbjet(Optional DBfile As String, Optional pwd As String) As adodb.Connection
 On Error GoTo err
 Dbpath = App.Path & "\LQD_database.mdb"
 cn = "Provider=Microsoft.Jet.OLEDB.4.0;Persist Security Info=False;Data Source=" & Dbpath
@@ -80,6 +80,3 @@ Public Function 删除(id As Long)
     Conn.Execute SQL
   
 End Function
-
-
-

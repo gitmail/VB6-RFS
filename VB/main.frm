@@ -1,20 +1,28 @@
 VERSION 5.00
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "Msadodc.OCX"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "MSCOMM32.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
 Begin VB.Form main 
    Appearance      =   0  'Flat
    Caption         =   "冷强度检测仪"
-   ClientHeight    =   9720
+   ClientHeight    =   9744
    ClientLeft      =   60
-   ClientTop       =   456
+   ClientTop       =   432
    ClientWidth     =   14244
    ForeColor       =   &H80000000&
    LinkTopic       =   "Form1"
-   ScaleHeight     =   9720
+   ScaleHeight     =   9744
    ScaleWidth      =   14244
    StartUpPosition =   1  '所有者中心
+   Begin MSComDlg.CommonDialog CD1 
+      Left            =   240
+      Top             =   240
+      _ExtentX        =   847
+      _ExtentY        =   847
+      _Version        =   393216
+   End
    Begin VB.Timer Timer2 
       Interval        =   10
       Left            =   12960
@@ -46,97 +54,115 @@ Begin VB.Form main
       _ExtentX        =   24575
       _ExtentY        =   14838
       _Version        =   393216
+      Tab             =   2
       TabHeight       =   520
       ForeColor       =   -2147483641
       TabCaption(0)   =   "通讯设置(F2)"
       TabPicture(0)   =   "main.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Label21"
-      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "TextSend"
-      Tab(0).Control(1).Enabled=   0   'False
       Tab(0).Control(2)=   "Command4"
-      Tab(0).Control(2).Enabled=   0   'False
       Tab(0).Control(3)=   "Frame2"
-      Tab(0).Control(3).Enabled=   0   'False
       Tab(0).Control(4)=   "Frame1"
-      Tab(0).Control(4).Enabled=   0   'False
       Tab(0).Control(5)=   "Frame3"
-      Tab(0).Control(5).Enabled=   0   'False
       Tab(0).Control(6)=   "Frame4"
-      Tab(0).Control(6).Enabled=   0   'False
       Tab(0).ControlCount=   7
       TabCaption(1)   =   " 实时显示（&F3)"
       TabPicture(1)   =   "main.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Command11"
-      Tab(1).Control(1)=   "Channel(5)"
-      Tab(1).Control(2)=   "Channel(4)"
-      Tab(1).Control(3)=   "Channel(3)"
-      Tab(1).Control(4)=   "Channel(2)"
-      Tab(1).Control(5)=   "Channel(0)"
-      Tab(1).Control(6)=   "Channel(1)"
-      Tab(1).Control(7)=   "LabelUnconnect"
-      Tab(1).Control(8)=   "Line1"
-      Tab(1).Control(9)=   "Line7"
-      Tab(1).Control(10)=   "Label4"
-      Tab(1).Control(11)=   "Label13"
+      Tab(1).Control(0)=   "Line4"
+      Tab(1).Control(1)=   "Line3"
+      Tab(1).Control(2)=   "Line2"
+      Tab(1).Control(3)=   "Label14"
+      Tab(1).Control(4)=   "Label3"
+      Tab(1).Control(5)=   "Label5"
+      Tab(1).Control(6)=   "Label6"
+      Tab(1).Control(7)=   "Label7"
+      Tab(1).Control(8)=   "Label8"
+      Tab(1).Control(9)=   "Label9"
+      Tab(1).Control(10)=   "Label10"
+      Tab(1).Control(11)=   "Label11"
       Tab(1).Control(12)=   "Label12"
-      Tab(1).Control(13)=   "Label11"
-      Tab(1).Control(14)=   "Label10"
-      Tab(1).Control(15)=   "Label9"
-      Tab(1).Control(16)=   "Label8"
-      Tab(1).Control(17)=   "Label7"
-      Tab(1).Control(18)=   "Label6"
-      Tab(1).Control(19)=   "Label5"
-      Tab(1).Control(20)=   "Label3"
-      Tab(1).Control(21)=   "Label14"
-      Tab(1).Control(22)=   "Line2"
-      Tab(1).Control(23)=   "Line3"
-      Tab(1).Control(24)=   "Line4"
+      Tab(1).Control(13)=   "Label13"
+      Tab(1).Control(14)=   "Label4"
+      Tab(1).Control(15)=   "Line7"
+      Tab(1).Control(16)=   "Line1"
+      Tab(1).Control(17)=   "LabelUnconnect"
+      Tab(1).Control(18)=   "Channel(1)"
+      Tab(1).Control(19)=   "Channel(0)"
+      Tab(1).Control(20)=   "Channel(2)"
+      Tab(1).Control(21)=   "Channel(3)"
+      Tab(1).Control(22)=   "Channel(4)"
+      Tab(1).Control(23)=   "Channel(5)"
+      Tab(1).Control(24)=   "Command11"
       Tab(1).ControlCount=   25
       TabCaption(2)   =   "数据查询(F4)"
       TabPicture(2)   =   "main.frx":0038
-      Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "data_ck_txt"
-      Tab(2).Control(1)=   "time_ck_txt"
-      Tab(2).Control(2)=   "name_ck_txt"
-      Tab(2).Control(3)=   "id_ck_txt"
-      Tab(2).Control(4)=   "DB查询bt"
-      Tab(2).Control(5)=   "Adodc1"
-      Tab(2).Control(6)=   "Command12"
-      Tab(2).Control(7)=   "Command3"
-      Tab(2).Control(8)=   "DataGrid0"
-      Tab(2).Control(9)=   "Shape2"
-      Tab(2).Control(10)=   "Label36"
-      Tab(2).Control(11)=   "Label35"
-      Tab(2).Control(12)=   "Label34"
-      Tab(2).Control(13)=   "Label33"
-      Tab(2).ControlCount=   14
+      Tab(2).ControlEnabled=   -1  'True
+      Tab(2).Control(0)=   "Label33"
+      Tab(2).Control(0).Enabled=   0   'False
+      Tab(2).Control(1)=   "Label34"
+      Tab(2).Control(1).Enabled=   0   'False
+      Tab(2).Control(2)=   "Label35"
+      Tab(2).Control(2).Enabled=   0   'False
+      Tab(2).Control(3)=   "Label36"
+      Tab(2).Control(3).Enabled=   0   'False
+      Tab(2).Control(4)=   "Shape2"
+      Tab(2).Control(4).Enabled=   0   'False
+      Tab(2).Control(5)=   "DataGrid0"
+      Tab(2).Control(5).Enabled=   0   'False
+      Tab(2).Control(6)=   "Command3"
+      Tab(2).Control(6).Enabled=   0   'False
+      Tab(2).Control(7)=   "Command12"
+      Tab(2).Control(7).Enabled=   0   'False
+      Tab(2).Control(8)=   "Adodc1"
+      Tab(2).Control(8).Enabled=   0   'False
+      Tab(2).Control(9)=   "DB查询bt"
+      Tab(2).Control(9).Enabled=   0   'False
+      Tab(2).Control(10)=   "id_ck_txt"
+      Tab(2).Control(10).Enabled=   0   'False
+      Tab(2).Control(11)=   "name_ck_txt"
+      Tab(2).Control(11).Enabled=   0   'False
+      Tab(2).Control(12)=   "time_ck_txt"
+      Tab(2).Control(12).Enabled=   0   'False
+      Tab(2).Control(13)=   "data_ck_txt"
+      Tab(2).Control(13).Enabled=   0   'False
+      Tab(2).Control(14)=   "exportExcel"
+      Tab(2).Control(14).Enabled=   0   'False
+      Tab(2).ControlCount=   15
+      Begin VB.CommandButton exportExcel 
+         Caption         =   "导出excel"
+         Height          =   492
+         Left            =   11520
+         TabIndex        =   162
+         Top             =   600
+         Width           =   972
+      End
       Begin VB.TextBox data_ck_txt 
          Height          =   264
-         Left            =   -65880
+         Left            =   9120
          TabIndex        =   157
          Top             =   720
          Width           =   1212
       End
       Begin VB.TextBox time_ck_txt 
          Height          =   264
-         Left            =   -67440
+         Left            =   7560
          TabIndex        =   156
          Top             =   720
          Width           =   1092
       End
       Begin VB.TextBox name_ck_txt 
          Height          =   264
-         Left            =   -69240
+         Left            =   5760
          TabIndex        =   155
          Top             =   720
          Width           =   1092
       End
       Begin VB.TextBox id_ck_txt 
          Height          =   264
-         Left            =   -71160
+         Left            =   3840
          TabIndex        =   154
          Top             =   720
          Width           =   1092
@@ -144,15 +170,15 @@ Begin VB.Form main
       Begin VB.CommandButton DB查询bt 
          Caption         =   "条件查询"
          Height          =   492
-         Left            =   -64560
+         Left            =   10440
          TabIndex        =   153
          Top             =   600
-         Width           =   1212
+         Width           =   972
       End
       Begin MSAdodcLib.Adodc Adodc1 
          DragMode        =   1  'Automatic
          Height          =   372
-         Left            =   -64680
+         Left            =   10320
          Top             =   7440
          Visible         =   0   'False
          Width           =   2040
@@ -200,7 +226,7 @@ Begin VB.Form main
       Begin VB.CommandButton Command12 
          Caption         =   "自动刷新：开"
          Height          =   375
-         Left            =   -74640
+         Left            =   360
          TabIndex        =   143
          Top             =   720
          Width           =   1332
@@ -980,7 +1006,7 @@ Begin VB.Form main
       Begin VB.Frame Frame4 
          Caption         =   "串口监视："
          Height          =   6135
-         Left            =   8280
+         Left            =   -66720
          TabIndex        =   69
          Top             =   720
          Width           =   5295
@@ -1042,7 +1068,7 @@ Begin VB.Form main
       Begin VB.Frame Frame3 
          Caption         =   "数据采集设定"
          Height          =   6135
-         Left            =   2520
+         Left            =   -72480
          TabIndex        =   53
          Top             =   600
          Width           =   5535
@@ -1411,7 +1437,7 @@ Begin VB.Form main
       Begin VB.Frame Frame1 
          Caption         =   "串口设置"
          Height          =   4455
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   24
          Top             =   600
          Width           =   2055
@@ -1586,7 +1612,7 @@ Begin VB.Form main
       Begin VB.CommandButton Command3 
          Caption         =   "手动添加数据"
          Height          =   615
-         Left            =   -62760
+         Left            =   12240
          TabIndex        =   23
          Top             =   9480
          Width           =   1335
@@ -1594,7 +1620,7 @@ Begin VB.Form main
       Begin VB.Frame Frame2 
          Caption         =   "从机状态"
          Height          =   2415
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   20
          Top             =   5160
          Width           =   2055
@@ -1699,14 +1725,14 @@ Begin VB.Form main
       Begin VB.CommandButton Command4 
          Caption         =   "发送(&s)"
          Height          =   372
-         Left            =   12480
+         Left            =   -62520
          TabIndex        =   19
          Top             =   7200
          Width           =   1095
       End
       Begin VB.TextBox TextSend 
          Height          =   372
-         Left            =   3720
+         Left            =   -71280
          TabIndex        =   18
          Top             =   7200
          Width           =   8655
@@ -2094,7 +2120,7 @@ Begin VB.Form main
       Begin MSDataGridLib.DataGrid DataGrid0 
          Bindings        =   "main.frx":019E
          Height          =   7212
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   152
          Top             =   1200
          Width           =   13692
@@ -2357,7 +2383,7 @@ Begin VB.Form main
          BorderColor     =   &H00FFFFFF&
          FillStyle       =   0  'Solid
          Height          =   372
-         Left            =   -73320
+         Left            =   1680
          Shape           =   3  'Circle
          Top             =   720
          Width           =   372
@@ -2365,7 +2391,7 @@ Begin VB.Form main
       Begin VB.Label Label36 
          Caption         =   "设备名称="
          Height          =   252
-         Left            =   -70080
+         Left            =   4920
          TabIndex        =   161
          Top             =   720
          Width           =   852
@@ -2373,7 +2399,7 @@ Begin VB.Form main
       Begin VB.Label Label35 
          Caption         =   "时间="
          Height          =   252
-         Left            =   -68040
+         Left            =   6960
          TabIndex        =   160
          Top             =   720
          Width           =   612
@@ -2381,7 +2407,7 @@ Begin VB.Form main
       Begin VB.Label Label34 
          Caption         =   "日期="
          Height          =   252
-         Left            =   -66360
+         Left            =   8640
          TabIndex        =   159
          Top             =   720
          Width           =   612
@@ -2389,7 +2415,7 @@ Begin VB.Form main
       Begin VB.Label Label33 
          Caption         =   "ID="
          Height          =   252
-         Left            =   -71640
+         Left            =   3360
          TabIndex        =   158
          Top             =   720
          Width           =   372
@@ -2661,7 +2687,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   2400
+         Left            =   -72600
          TabIndex        =   34
          Top             =   7200
          Width           =   1455
@@ -2828,6 +2854,61 @@ Const MainDeal = 2
 Dim RecBuf As Collection
 
 
+'
+Private Sub exportExcel_Click()
+Call 导出(Adodc1.Recordset)
+End Sub
+Public Function 导出(rsForOutput As adodb.Recordset)
+Dim xlApp As Excel.Application
+Dim xlBook As Excel.Workbook
+Dim xlSheet As Excel.Worksheet
+Dim strFilename As String ''Excel文件
+Dim i As Integer, j As Integer
+On Error GoTo exError
+
+strFilename = App.Path & "\a.xls"
+Set xlApp = CreateObject("Excel.Application") '创建EXCEL应用类
+xlApp.Visible = False '设置EXCEL不可见
+Set xlBook = xlApp.Workbooks.Add() '打开EXCEL工作簿
+'Set xlBook = xlApp.Workbooks.Open(strFilename) '打开EXCEL工作簿
+Set xlSheet = xlBook.Worksheets(1) '打开EXCEL工作表
+xlSheet.Activate '激活工作表
+xlBook.RunAutoMacros (xlAutoOpen) ''运行EXCEL中的启动宏
+
+''写入数据到Excel
+xlSheet.Cells.CopyFromRecordset rsForOutput
+'xlSheet.Columns(5).NumberFormat = "00:00:00"
+xlSheet.Columns("E:E").NumberFormat = "hh:mm:ss"
+xlSheet.Columns("F:J").NumberFormat = "0.1"
+xlSheet.Columns("A:N").AutoFit
+
+'大功告成，关闭对象以及退出
+  '设置对话框
+  CD1.DialogTitle = "excel保存到..."
+  CD1.InitDir = "c:\"               '缺省路径
+  CD1.Filter = "*.xls"
+  CD1.ShowSave
+  strFilename = CD1.FileName
+  If strFilename <> "" Then
+    xlBook.SaveAs (strFilename) '保存关闭文档
+    xlBook.RunAutoMacros (xlAutoClose) '关闭宏
+    xlBook.Close (True) '关闭EXCEL工作簿
+    xlApp.Quit '关闭EXCEL
+  End If
+Exit Function
+exError:
+   MsgBox ("文件导出失败，请检查目标文件是否正在使用！")
+End Function
+
+
+
+Public Function savefile()
+  CD1.DialogTitle = "excel保存到..."
+  CD1.InitDir = "c:\"               '缺省路径
+  CD1.Filter = "*.xls"
+  CD1.ShowSave
+  savefile = 1
+End Function
 '*******************************界面初始化************************************
 '
 '初始化程序
@@ -2923,6 +3004,7 @@ End Sub
 
 
 Private Sub Command12_Click()   'tab2显示全部按下
+
     If db_auto_refresh = True Then
          db_auto_refresh = False
          Command12.Caption = "自动刷新：关"
@@ -2932,10 +3014,11 @@ Private Sub Command12_Click()   'tab2显示全部按下
         Command12.Caption = "自动刷新：开"
         db_auto_refresh = True
     End If
-    
+
 End Sub
 
 Private Sub DB查询bt_Click()
+    On Error GoTo DB_lookup_error
     Dim wherestr As String
     wherestr = ""
     If id_ck_txt.Text <> "" Then
@@ -2954,9 +3037,10 @@ Private Sub DB查询bt_Click()
     wherestr = " where 1=1" & wherestr
     Adodc1.RecordSource = "select * from 设备数据" & wherestr
     Adodc1.Refresh
-    
+    Exit Sub
      '(a = 1 or a is null) and (b = 2 or b is null) and (c = 3 or c is null)
-    
+DB_lookup_error:
+    MsgBox ("查询条件输入有误，请重试！")
 End Sub
 
 
