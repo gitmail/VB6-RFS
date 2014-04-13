@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "Msadodc.OCX"
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "MSCOMM32.OCX"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
@@ -46,19 +46,25 @@ Begin VB.Form main
       _ExtentX        =   24575
       _ExtentY        =   14838
       _Version        =   393216
-      Tab             =   2
       TabHeight       =   520
       ForeColor       =   -2147483641
       TabCaption(0)   =   "通讯设置(F2)"
       TabPicture(0)   =   "main.frx":0000
-      Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Frame4"
-      Tab(0).Control(1)=   "Frame3"
-      Tab(0).Control(2)=   "Frame1"
+      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).Control(0)=   "Label21"
+      Tab(0).Control(0).Enabled=   0   'False
+      Tab(0).Control(1)=   "TextSend"
+      Tab(0).Control(1).Enabled=   0   'False
+      Tab(0).Control(2)=   "Command4"
+      Tab(0).Control(2).Enabled=   0   'False
       Tab(0).Control(3)=   "Frame2"
-      Tab(0).Control(4)=   "Command4"
-      Tab(0).Control(5)=   "TextSend"
-      Tab(0).Control(6)=   "Label21"
+      Tab(0).Control(3).Enabled=   0   'False
+      Tab(0).Control(4)=   "Frame1"
+      Tab(0).Control(4).Enabled=   0   'False
+      Tab(0).Control(5)=   "Frame3"
+      Tab(0).Control(5).Enabled=   0   'False
+      Tab(0).Control(6)=   "Frame4"
+      Tab(0).Control(6).Enabled=   0   'False
       Tab(0).ControlCount=   7
       TabCaption(1)   =   " 实时显示（&F3)"
       TabPicture(1)   =   "main.frx":001C
@@ -91,60 +97,46 @@ Begin VB.Form main
       Tab(1).ControlCount=   25
       TabCaption(2)   =   "数据查询(F4)"
       TabPicture(2)   =   "main.frx":0038
-      Tab(2).ControlEnabled=   -1  'True
-      Tab(2).Control(0)=   "Label33"
-      Tab(2).Control(0).Enabled=   0   'False
-      Tab(2).Control(1)=   "Label34"
-      Tab(2).Control(1).Enabled=   0   'False
-      Tab(2).Control(2)=   "Label35"
-      Tab(2).Control(2).Enabled=   0   'False
-      Tab(2).Control(3)=   "Label36"
-      Tab(2).Control(3).Enabled=   0   'False
-      Tab(2).Control(4)=   "Shape2"
-      Tab(2).Control(4).Enabled=   0   'False
-      Tab(2).Control(5)=   "DataGrid0"
-      Tab(2).Control(5).Enabled=   0   'False
-      Tab(2).Control(6)=   "Command3"
-      Tab(2).Control(6).Enabled=   0   'False
-      Tab(2).Control(7)=   "Command12"
-      Tab(2).Control(7).Enabled=   0   'False
-      Tab(2).Control(8)=   "Adodc1"
-      Tab(2).Control(8).Enabled=   0   'False
-      Tab(2).Control(9)=   "DB查询bt"
-      Tab(2).Control(9).Enabled=   0   'False
-      Tab(2).Control(10)=   "id_ck_txt"
-      Tab(2).Control(10).Enabled=   0   'False
-      Tab(2).Control(11)=   "name_ck_txt"
-      Tab(2).Control(11).Enabled=   0   'False
-      Tab(2).Control(12)=   "time_ck_txt"
-      Tab(2).Control(12).Enabled=   0   'False
-      Tab(2).Control(13)=   "data_ck_txt"
-      Tab(2).Control(13).Enabled=   0   'False
+      Tab(2).ControlEnabled=   0   'False
+      Tab(2).Control(0)=   "data_ck_txt"
+      Tab(2).Control(1)=   "time_ck_txt"
+      Tab(2).Control(2)=   "name_ck_txt"
+      Tab(2).Control(3)=   "id_ck_txt"
+      Tab(2).Control(4)=   "DB查询bt"
+      Tab(2).Control(5)=   "Adodc1"
+      Tab(2).Control(6)=   "Command12"
+      Tab(2).Control(7)=   "Command3"
+      Tab(2).Control(8)=   "DataGrid0"
+      Tab(2).Control(9)=   "Shape2"
+      Tab(2).Control(10)=   "Label36"
+      Tab(2).Control(11)=   "Label35"
+      Tab(2).Control(12)=   "Label34"
+      Tab(2).Control(13)=   "Label33"
       Tab(2).ControlCount=   14
       Begin VB.TextBox data_ck_txt 
          Height          =   264
-         Left            =   9120
+         Left            =   -65880
          TabIndex        =   157
          Top             =   720
          Width           =   1212
       End
       Begin VB.TextBox time_ck_txt 
          Height          =   264
-         Left            =   7560
+         Left            =   -67440
          TabIndex        =   156
          Top             =   720
          Width           =   1092
       End
       Begin VB.TextBox name_ck_txt 
          Height          =   264
-         Left            =   5760
+         Left            =   -69240
          TabIndex        =   155
          Top             =   720
          Width           =   1092
       End
       Begin VB.TextBox id_ck_txt 
          Height          =   264
-         Left            =   3840
+         Left            =   -71160
          TabIndex        =   154
          Top             =   720
          Width           =   1092
@@ -152,7 +144,7 @@ Begin VB.Form main
       Begin VB.CommandButton DB查询bt 
          Caption         =   "条件查询"
          Height          =   492
-         Left            =   10440
+         Left            =   -64560
          TabIndex        =   153
          Top             =   600
          Width           =   1212
@@ -160,7 +152,7 @@ Begin VB.Form main
       Begin MSAdodcLib.Adodc Adodc1 
          DragMode        =   1  'Automatic
          Height          =   372
-         Left            =   10320
+         Left            =   -64680
          Top             =   7440
          Visible         =   0   'False
          Width           =   2040
@@ -208,7 +200,7 @@ Begin VB.Form main
       Begin VB.CommandButton Command12 
          Caption         =   "自动刷新：开"
          Height          =   375
-         Left            =   360
+         Left            =   -74640
          TabIndex        =   143
          Top             =   720
          Width           =   1332
@@ -988,7 +980,7 @@ Begin VB.Form main
       Begin VB.Frame Frame4 
          Caption         =   "串口监视："
          Height          =   6135
-         Left            =   -66720
+         Left            =   8280
          TabIndex        =   69
          Top             =   720
          Width           =   5295
@@ -1050,7 +1042,7 @@ Begin VB.Form main
       Begin VB.Frame Frame3 
          Caption         =   "数据采集设定"
          Height          =   6135
-         Left            =   -72480
+         Left            =   2520
          TabIndex        =   53
          Top             =   600
          Width           =   5535
@@ -1419,7 +1411,7 @@ Begin VB.Form main
       Begin VB.Frame Frame1 
          Caption         =   "串口设置"
          Height          =   4455
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   24
          Top             =   600
          Width           =   2055
@@ -1594,7 +1586,7 @@ Begin VB.Form main
       Begin VB.CommandButton Command3 
          Caption         =   "手动添加数据"
          Height          =   615
-         Left            =   12240
+         Left            =   -62760
          TabIndex        =   23
          Top             =   9480
          Width           =   1335
@@ -1602,7 +1594,7 @@ Begin VB.Form main
       Begin VB.Frame Frame2 
          Caption         =   "从机状态"
          Height          =   2415
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   20
          Top             =   5160
          Width           =   2055
@@ -1707,14 +1699,14 @@ Begin VB.Form main
       Begin VB.CommandButton Command4 
          Caption         =   "发送(&s)"
          Height          =   372
-         Left            =   -62520
+         Left            =   12480
          TabIndex        =   19
          Top             =   7200
          Width           =   1095
       End
       Begin VB.TextBox TextSend 
          Height          =   372
-         Left            =   -71280
+         Left            =   3720
          TabIndex        =   18
          Top             =   7200
          Width           =   8655
@@ -2102,7 +2094,7 @@ Begin VB.Form main
       Begin MSDataGridLib.DataGrid DataGrid0 
          Bindings        =   "main.frx":019E
          Height          =   7212
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   152
          Top             =   1200
          Width           =   13692
@@ -2365,7 +2357,7 @@ Begin VB.Form main
          BorderColor     =   &H00FFFFFF&
          FillStyle       =   0  'Solid
          Height          =   372
-         Left            =   1680
+         Left            =   -73320
          Shape           =   3  'Circle
          Top             =   720
          Width           =   372
@@ -2373,7 +2365,7 @@ Begin VB.Form main
       Begin VB.Label Label36 
          Caption         =   "设备名称="
          Height          =   252
-         Left            =   4920
+         Left            =   -70080
          TabIndex        =   161
          Top             =   720
          Width           =   852
@@ -2381,7 +2373,7 @@ Begin VB.Form main
       Begin VB.Label Label35 
          Caption         =   "时间="
          Height          =   252
-         Left            =   6960
+         Left            =   -68040
          TabIndex        =   160
          Top             =   720
          Width           =   612
@@ -2389,7 +2381,7 @@ Begin VB.Form main
       Begin VB.Label Label34 
          Caption         =   "日期="
          Height          =   252
-         Left            =   8640
+         Left            =   -66360
          TabIndex        =   159
          Top             =   720
          Width           =   612
@@ -2397,7 +2389,7 @@ Begin VB.Form main
       Begin VB.Label Label33 
          Caption         =   "ID="
          Height          =   252
-         Left            =   3360
+         Left            =   -71640
          TabIndex        =   158
          Top             =   720
          Width           =   372
@@ -2669,7 +2661,7 @@ Begin VB.Form main
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Left            =   -72600
+         Left            =   2400
          TabIndex        =   34
          Top             =   7200
          Width           =   1455
@@ -3397,8 +3389,8 @@ List1.ListIndex = List1.ListCount - 1 'list1 焦点放到最后一行上面
 If DB_NEED_REFRESH = True Then
     DB_REFRESH_DELAY = DB_REFRESH_DELAY + 1
     'List1.AddItem ("dbdelay=" & DB_REFRESH_DELAY)
-    If DB_REFRESH_DELAY >= 500 Then
-        'List1.AddItem ("Refresh")
+    If DB_REFRESH_DELAY >= 100 Then  '延时刷新数据库，延时值为Timer2的中断周期（10ms）*N，现在N=100，即延时1秒刷新数据库
+        List1.AddItem ("更新数据库。。")
         DB_REFRESH_DELAY = 0
         DB_NEED_REFRESH = False
         Adodc1.RecordSource = "select * from 设备数据"
