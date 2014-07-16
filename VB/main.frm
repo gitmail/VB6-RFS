@@ -60,42 +60,42 @@ Begin VB.Form main
       TabCaption(0)   =   "通讯设置(F2)"
       TabPicture(0)   =   "main.frx":0000
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Label21"
-      Tab(0).Control(1)=   "TextSend"
-      Tab(0).Control(2)=   "Command4"
+      Tab(0).Control(0)=   "Frame4"
+      Tab(0).Control(1)=   "Frame3"
+      Tab(0).Control(2)=   "Frame1"
       Tab(0).Control(3)=   "Frame2"
-      Tab(0).Control(4)=   "Frame1"
-      Tab(0).Control(5)=   "Frame3"
-      Tab(0).Control(6)=   "Frame4"
+      Tab(0).Control(4)=   "Command4"
+      Tab(0).Control(5)=   "TextSend"
+      Tab(0).Control(6)=   "Label21"
       Tab(0).ControlCount=   7
       TabCaption(1)   =   " 实时显示（&F3)"
       TabPicture(1)   =   "main.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Line4"
-      Tab(1).Control(1)=   "Line3"
-      Tab(1).Control(2)=   "Line2"
-      Tab(1).Control(3)=   "Label14"
-      Tab(1).Control(4)=   "Label3"
-      Tab(1).Control(5)=   "Label5"
-      Tab(1).Control(6)=   "Label6"
-      Tab(1).Control(7)=   "Label7"
-      Tab(1).Control(8)=   "Label8"
-      Tab(1).Control(9)=   "Label9"
-      Tab(1).Control(10)=   "Label10"
-      Tab(1).Control(11)=   "Label11"
+      Tab(1).Control(0)=   "Command11"
+      Tab(1).Control(1)=   "Channel(5)"
+      Tab(1).Control(2)=   "Channel(4)"
+      Tab(1).Control(3)=   "Channel(3)"
+      Tab(1).Control(4)=   "Channel(2)"
+      Tab(1).Control(5)=   "Channel(0)"
+      Tab(1).Control(6)=   "Channel(1)"
+      Tab(1).Control(7)=   "LabelUnconnect"
+      Tab(1).Control(8)=   "Line1"
+      Tab(1).Control(9)=   "Line7"
+      Tab(1).Control(10)=   "Label4"
+      Tab(1).Control(11)=   "Label13"
       Tab(1).Control(12)=   "Label12"
-      Tab(1).Control(13)=   "Label13"
-      Tab(1).Control(14)=   "Label4"
-      Tab(1).Control(15)=   "Line7"
-      Tab(1).Control(16)=   "Line1"
-      Tab(1).Control(17)=   "LabelUnconnect"
-      Tab(1).Control(18)=   "Channel(1)"
-      Tab(1).Control(19)=   "Channel(0)"
-      Tab(1).Control(20)=   "Channel(2)"
-      Tab(1).Control(21)=   "Channel(3)"
-      Tab(1).Control(22)=   "Channel(4)"
-      Tab(1).Control(23)=   "Channel(5)"
-      Tab(1).Control(24)=   "Command11"
+      Tab(1).Control(13)=   "Label11"
+      Tab(1).Control(14)=   "Label10"
+      Tab(1).Control(15)=   "Label9"
+      Tab(1).Control(16)=   "Label8"
+      Tab(1).Control(17)=   "Label7"
+      Tab(1).Control(18)=   "Label6"
+      Tab(1).Control(19)=   "Label5"
+      Tab(1).Control(20)=   "Label3"
+      Tab(1).Control(21)=   "Label14"
+      Tab(1).Control(22)=   "Line2"
+      Tab(1).Control(23)=   "Line3"
+      Tab(1).Control(24)=   "Line4"
       Tab(1).ControlCount=   25
       TabCaption(2)   =   "数据查询(F4)"
       TabPicture(2)   =   "main.frx":0038
@@ -2756,6 +2756,8 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+' REV
+
 '************通信相关寄存器定义************
 '常量定义
 Const FRAME_MAX_LEN = 80   '最大帧长
@@ -2994,6 +2996,7 @@ RecState = RecIdle
 '数据库加载
 usedatabase = True '开启数据库
 Call databaseInit
+Call DB查询bt_Click '使用空条件查询初始化数据，此步是为了排序显示数据
 'tab2 连接数据库      Dim sql As String
 Set DataGrid0.DataSource = Adodc1
 '数据库显示自动刷新
@@ -3035,8 +3038,11 @@ Private Sub DB查询bt_Click()
     End If
     'List1.AddItem (wherestr)
     wherestr = " where 1=1" & wherestr
-    Adodc1.RecordSource = "select * from 设备数据" & wherestr
+
+ 
+    Adodc1.RecordSource = "select * from 设备数据" & wherestr & " ORDER BY 编号"
     Adodc1.Refresh
+    
     Exit Sub
      '(a = 1 or a is null) and (b = 2 or b is null) and (c = 3 or c is null)
 DB_lookup_error:
@@ -3477,9 +3483,8 @@ If DB_NEED_REFRESH = True Then
         List1.AddItem ("更新数据库。。")
         DB_REFRESH_DELAY = 0
         DB_NEED_REFRESH = False
-        Adodc1.RecordSource = "select * from 设备数据"
+        Adodc1.RecordSource = "select * from 设备数据 ORDER BY 编号"
         Adodc1.Refresh
-        'DataGrid0.ReBind
         DataGrid0.Refresh
         If Adodc1.Recordset.RecordCount <> 0 Then
             Adodc1.Recordset.MoveLast

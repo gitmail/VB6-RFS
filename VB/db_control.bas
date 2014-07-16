@@ -3,6 +3,8 @@ Public Conn As New adodb.Connection
 Public rs As New adodb.Recordset
 '定义设备信息结构体
 Public DS1 As DeviceState
+Public Adodc1 As Adodc
+
 Public Function adodbjet(Optional DBfile As String, Optional pwd As String) As adodb.Connection
 On Error GoTo err
 Dbpath = App.Path & "\LQD_database.mdb"
@@ -19,7 +21,7 @@ Public Function databaseInit()
 End Function
 
 Public Function addRecord(Index As Byte)
-SQL = "select * from 设备数据"
+SQL = "select * from 设备数据 ORDER BY 编号"
 rs.Open SQL, Conn, 3, 3
 If Not rs.EOF Or Not BOF Then
     rs.AddNew
@@ -43,7 +45,7 @@ End Function
 
 
 Public Function 读取()
-SQL = "select * from 设备数据"
+SQL = "select * from 设备数据 ORDER BY 编号"
 rs.Open SQL, Conn, 1, 1
 If rs.RecordCount <> 0 Then
         rs.MoveFirst
@@ -59,7 +61,7 @@ If rs.RecordCount <> 0 Then
  rs.Close
 End Function
 Public Function 修改(id As Long, 数据 As String)
-    SQL = "select * from 设备数据 where id=" & id
+    SQL = "select * from 设备数据 where id=" & id & " ORDER BY 编号"
     rs.Open SQL, Conn, 1, 3
     If Not rs.BOF Or Not rs.EOF Then
         rs("name") = 数据
@@ -76,7 +78,7 @@ Public Function 修改(id As Long, 数据 As String)
     
 End Function
 Public Function 删除(id As Long)
-    SQL = "Delete from 设备数据 where id=" & id
+    SQL = "Delete from 设备数据 where id=" & id & " ORDER BY 编号"
     Conn.Execute SQL
   
 End Function
