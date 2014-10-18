@@ -60,42 +60,42 @@ Begin VB.Form main
       TabCaption(0)   =   "通讯设置(F2)"
       TabPicture(0)   =   "main.frx":0000
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Frame4"
-      Tab(0).Control(1)=   "Frame3"
-      Tab(0).Control(2)=   "Frame1"
+      Tab(0).Control(0)=   "Label21"
+      Tab(0).Control(1)=   "TextSend"
+      Tab(0).Control(2)=   "Command4"
       Tab(0).Control(3)=   "Frame2"
-      Tab(0).Control(4)=   "Command4"
-      Tab(0).Control(5)=   "TextSend"
-      Tab(0).Control(6)=   "Label21"
+      Tab(0).Control(4)=   "Frame1"
+      Tab(0).Control(5)=   "Frame3"
+      Tab(0).Control(6)=   "Frame4"
       Tab(0).ControlCount=   7
       TabCaption(1)   =   " 实时显示（&F3)"
       TabPicture(1)   =   "main.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Command11"
-      Tab(1).Control(1)=   "Channel(5)"
-      Tab(1).Control(2)=   "Channel(4)"
-      Tab(1).Control(3)=   "Channel(3)"
-      Tab(1).Control(4)=   "Channel(2)"
-      Tab(1).Control(5)=   "Channel(0)"
-      Tab(1).Control(6)=   "Channel(1)"
-      Tab(1).Control(7)=   "LabelUnconnect"
-      Tab(1).Control(8)=   "Line1"
-      Tab(1).Control(9)=   "Line7"
-      Tab(1).Control(10)=   "Label4"
-      Tab(1).Control(11)=   "Label13"
+      Tab(1).Control(0)=   "Line4"
+      Tab(1).Control(1)=   "Line3"
+      Tab(1).Control(2)=   "Line2"
+      Tab(1).Control(3)=   "Label14"
+      Tab(1).Control(4)=   "Label3"
+      Tab(1).Control(5)=   "Label5"
+      Tab(1).Control(6)=   "Label6"
+      Tab(1).Control(7)=   "Label7"
+      Tab(1).Control(8)=   "Label8"
+      Tab(1).Control(9)=   "Label9"
+      Tab(1).Control(10)=   "Label10"
+      Tab(1).Control(11)=   "Label11"
       Tab(1).Control(12)=   "Label12"
-      Tab(1).Control(13)=   "Label11"
-      Tab(1).Control(14)=   "Label10"
-      Tab(1).Control(15)=   "Label9"
-      Tab(1).Control(16)=   "Label8"
-      Tab(1).Control(17)=   "Label7"
-      Tab(1).Control(18)=   "Label6"
-      Tab(1).Control(19)=   "Label5"
-      Tab(1).Control(20)=   "Label3"
-      Tab(1).Control(21)=   "Label14"
-      Tab(1).Control(22)=   "Line2"
-      Tab(1).Control(23)=   "Line3"
-      Tab(1).Control(24)=   "Line4"
+      Tab(1).Control(13)=   "Label13"
+      Tab(1).Control(14)=   "Label4"
+      Tab(1).Control(15)=   "Line7"
+      Tab(1).Control(16)=   "Line1"
+      Tab(1).Control(17)=   "LabelUnconnect"
+      Tab(1).Control(18)=   "Channel(1)"
+      Tab(1).Control(19)=   "Channel(0)"
+      Tab(1).Control(20)=   "Channel(2)"
+      Tab(1).Control(21)=   "Channel(3)"
+      Tab(1).Control(22)=   "Channel(4)"
+      Tab(1).Control(23)=   "Channel(5)"
+      Tab(1).Control(24)=   "Command11"
       Tab(1).ControlCount=   25
       TabCaption(2)   =   "数据查询(F4)"
       TabPicture(2)   =   "main.frx":0038
@@ -2877,12 +2877,39 @@ Set xlSheet = xlBook.Worksheets(1) '打开EXCEL工作表
 xlSheet.Activate '激活工作表
 xlBook.RunAutoMacros (xlAutoOpen) ''运行EXCEL中的启动宏
 
+
+
+
 ''写入数据到Excel
 xlSheet.Cells.CopyFromRecordset rsForOutput
+'写表头
+xlApp.ActiveSheet.Rows(1).Insert
+xlSheet.Cells(1, 1).Value = "编号"
+
+xlSheet.Rows("1:1").Select
+xlApp.Selection.Font.Bold = True
+xlApp.Selection.HorizontalAlignment = xlCenter
+'xlSheet.Range("A:H").Interior.ColorIndex = 6
+
+xlSheet.Cells(1, 2).Value = "设备ID"
+xlSheet.Cells(1, 3).Value = "设备名称"
+xlSheet.Cells(1, 4).Value = "日期"
+xlSheet.Cells(1, 5).Value = "时间"
+xlSheet.Cells(1, 6).Value = "温度"
+xlSheet.Cells(1, 7).Value = "风速"
+xlSheet.Cells(1, 8).Value = "风冷指数"
+xlSheet.Cells(1, 9).Value = "等价制冷温度"
+xlSheet.Cells(1, 10).Value = "相当温度"
+xlSheet.Cells(1, 11).Value = "冻伤危害性"
+xlSheet.Cells(1, 12).Value = "高强度作业"
+xlSheet.Cells(1, 13).Value = "中等强度作业"
+xlSheet.Cells(1, 14).Value = "安静作业"
+
 'xlSheet.Columns(5).NumberFormat = "00:00:00"
 xlSheet.Columns("E:E").NumberFormat = "hh:mm:ss"
 xlSheet.Columns("F:J").NumberFormat = "0.1"
 xlSheet.Columns("A:N").AutoFit
+
 
 '大功告成，关闭对象以及退出
   '设置对话框
