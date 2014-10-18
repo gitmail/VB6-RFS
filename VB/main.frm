@@ -2909,7 +2909,7 @@ xlSheet.Cells(1, 14).Value = "安静作业"
 xlSheet.Columns("E:E").NumberFormat = "hh:mm:ss"
 xlSheet.Columns("F:J").NumberFormat = "0.1"
 xlSheet.Columns("A:N").AutoFit
-
+xlSheet.Cells(1, 1).Select
 
 '大功告成，关闭对象以及退出
   '设置对话框

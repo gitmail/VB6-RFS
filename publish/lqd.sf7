@@ -1863,11 +1863,11 @@
 <Desc/>
 <Recurse>1</Recurse>
 <MatchMode>0</MatchMode>
-<Size>516096</Size>
+<Size>593920</Size>
 <Attrib>32</Attrib>
 <TmCreate>1364135221</TmCreate>
-<TmAccess>1397404800</TmAccess>
-<TmModify>1397407094</TmModify>
+<TmAccess>1405440000</TmAccess>
+<TmModify>1405517628</TmModify>
 <UseTrueVer>0</UseTrueVer>
 <ProdVerMS>0</ProdVerMS>
 <ProdVerLS>0</ProdVerLS>
@@ -2384,7 +2384,7 @@
 <Size>73728</Size>
 <Attrib>32</Attrib>
 <TmCreate>1397418142</TmCreate>
-<TmAccess>1397404800</TmAccess>
+<TmAccess>1405440000</TmAccess>
 <TmModify>1397418144</TmModify>
 <UseTrueVer>1</UseTrueVer>
 <ProdVerMS>65536</ProdVerMS>
@@ -2402,16 +2402,16 @@
 <SCStartProgs>0</SCStartProgs>
 <SCAppFld>1</SCAppFld>
 <SCStartup>0</SCStartup>
-<SCDesk>0</SCDesk>
+<SCDesk>1</SCDesk>
 <SCQLaunch>0</SCQLaunch>
 <SCCust>0</SCCust>
 <CustSCPath/>
-<SCDesc>冷强度检测仪上位机</SCDesc>
+<SCDesc>环境冷强度检测仪 1.2</SCDesc>
 <SCComment/>
 <SCArgs/>
 <SCWork/>
-<UseExtIco>0</UseExtIco>
-<IcoFN/>
+<UseExtIco>1</UseExtIco>
+<IcoFN>%AppFolder%\图标.ico</IcoFN>
 <IcoIdx>0</IcoIdx>
 <IcoShowMd>0</IcoShowMd>
 <IcoHK>0</IcoHK>
@@ -5384,7 +5384,7 @@ g_HandleSystemReboot();
 <EnableSilentMode>0</EnableSilentMode>
 <StartInSilentMode>0</StartInSilentMode>
 <VerifyArchive>0</VerifyArchive>
-<UserProfile>0</UserProfile>
+<UserProfile>1</UserProfile>
 <MainWindowSettings>
 <ShowBackGroundWindow>0</ShowBackGroundWindow>
 <WindowStyle>0</WindowStyle>
@@ -5393,8 +5393,8 @@ g_HandleSystemReboot();
 <GradientBackColor format="hex">b4c2e3</GradientBackColor>
 <GradientForeColor format="hex">5971b6</GradientForeColor>
 <ImageFile/>
-<UseCustomIcon>0</UseCustomIcon>
-<CustomIcon/>
+<UseCustomIcon>1</UseCustomIcon>
+<CustomIcon>%TempLaunchFolder%\图标.ico</CustomIcon>
 <HideTaskbarIcon>0</HideTaskbarIcon>
 <AlwaysOnTop>0</AlwaysOnTop>
 <Headline>%ProductName%</Headline>
@@ -5661,7 +5661,16 @@ end
 </SupportFiles>
 </Dependency>
 </DependencyModules>
-<PrimerFiles/>
+<PrimerFiles>
+<PrimerFile>
+<SourcePath>D:\LQD\LQD_VB6\VB\图标.ico</SourcePath>
+<DeleteOnExit>1</DeleteOnExit>
+<NeededByUninstall>0</NeededByUninstall>
+<BuildConfigs>
+<Cfg>All</Cfg>
+</BuildConfigs>
+</PrimerFile>
+</PrimerFiles>
 <Events>
 <Event>
 <Name>全局函数</Name>
@@ -5788,7 +5797,7 @@ g_HandleSystemReboot();
 <PostBuildProg/>
 <PostBuildCmdLine/>
 <PostBuildWait>0</PostBuildWait>
-<Filename>环境冷强度检测仪1.1_0422_安装.exe</Filename>
+<Filename>环境冷强度检测仪1.2_0716_安装.exe</Filename>
 <OutputFolder>C:\Users\home\Documents\My Setups</OutputFolder>
 <SegmentSizeMode>0</SegmentSizeMode>
 <CustomSegSize>100</CustomSegSize>
